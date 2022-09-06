@@ -1,0 +1,7 @@
+/backup
+/dist
+/node_modules
+/vendor
+/test
+/src/sql/cmd/all_files.sql
+/src/config.json

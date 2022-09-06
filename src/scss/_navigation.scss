@@ -1,0 +1,181 @@
+.navbar {
+    height: $navbar-height;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#navbar-banner {
+    width: $sidebar-width;
+    margin-right: 0;
+}
+
+.navbar h1,
+.navbar h2,
+.navbar h3,
+.navbar h4,
+.navbar h5,
+.navbar h6 {
+    margin: 0;
+}
+
+// Navbar Actions
+.navbar-action-container {
+    margin-left: auto;
+}
+
+.navbar-action-icon {
+    position: relative;
+    display: flex;
+    color: $white;
+    font-size: 1.7em;
+    padding: 0 $spacer;
+    @include transition($btn-transition);
+
+    &:hover {
+        color: $gray-500;
+    }
+
+
+
+    // Action Light
+    &.action-signal:before {
+        animation: flash 1.5s linear infinite;
+        content: "";
+        width: 7px;
+        height: 7px;
+        background-color: $danger;
+        border-radius: 50%;
+        position: absolute;
+        top: -10px;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+
+    &.action-signal.action-fast:before {
+        animation: flash 0.5s linear infinite;
+    }
+
+    &.action-signal.action-static:before {
+        animation: none;
+    }
+
+    @each $color, $value in $theme-colors {
+        &.action-#{$color}.action-signal:before {
+            background-color: $value;
+        }
+    }
+}
+
+// Blink Animation
+@keyframes flash {
+    50% {
+        opacity: 0;
+    }
+}
+
+.wrapper {
+    margin-top: $navbar-height + $breadcrumbs-height + 7px;
+    padding-top: $spacer * 0.5;
+    margin-bottom: 100px;
+   
+}
+
+
+
+.breadcrumbs {
+    position: absolute;
+    padding-left: $spacer * 0.75;
+    padding-top: $spacer * 0.375;
+    left: 0;
+    top: $navbar-height;
+    font-size: 11px;
+    color: #aaa;
+    
+
+    .divider {
+        padding-left: $spacer * 0.25;
+        padding-right: $spacer * 0.25;
+    }
+}
+
+.user-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fullsize-page {
+    height: 100vh;
+}
+
+.wrapper .fullsize-page {
+    height: calc(100vh - 210px);
+}
+
+
+.wrapper.loading>*:not(.loader-content) {
+    display: none;
+}
+
+
+// TABS
+
+.nav-tabs {
+    border: none;
+    border-bottom: 2px solid $gray-400;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    border-bottom: 2px solid $gray-400;
+    margin-bottom: -2px;
+
+    &:hover,
+    :focus {
+        border-color: transparent;
+        border-bottom: 2px solid $gray-400;
+    }
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+    background: transparent;
+    border-color: transparent;
+    border-bottom: 2px solid $primary;
+}
+
+
+
+
+// Ab der größeren Ansicht
+@media (min-width: 992px) {
+
+    .breadcrumbs {
+        margin-left: $sidebar-width;
+    }
+
+    .wrapper {
+        padding-left: $sidebar-width;
+    }
+
+    // Wrapper wenn die Sidebar ausgebelndet ist
+    body.closed-sidebar .wrapper {
+        padding-left: 0;
+    }
+
+    // Wrapper wenn die Sidebar ausgebelndet ist
+    body.closed-sidebar .breadcrumbs {
+        margin-left: 0;
+    }
+}
+
+
+
+
+body.with-transition {
+    .wrapper, .breadcrumbs {
+        transition: 0.15s all ease;
+    }
+}
+
+

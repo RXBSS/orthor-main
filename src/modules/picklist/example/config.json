@@ -1,0 +1,98 @@
+{
+    "title": "<i class=\"fas fa-bahai\"></i> Beispiel Liste",
+
+
+    "table": {
+        "name": "example",
+        "joins": "LEFT JOIN `example_auswahl` ON `example`.`auswahl` = `example_auswahl`.`id`"
+    },
+
+    "fields": {
+        "id": {
+            "title": "ID"
+        },
+        "name": {
+            "title": "Name"
+        },
+        "beschreibung": {
+            "title": "Beschreibung",
+            "filter": true
+        },
+        "bezeichnung": {
+            "title": "Auswahl",
+            "table": "example_auswahl",
+            "filter": {
+                "type": "quickselect",
+                "qs-name": "auswahl"
+            }
+        },
+        "zeitstempel": {
+            "title": "Zeitstempel",
+            "format": "custom-datetime",
+            "format-config": "Y-M-D"
+        },
+        "betrag": {
+            "title": "Betrag",
+            "format": "betrag",
+            "format-config": ["$"],
+            "filter": true,
+            "class": "highlight"
+        },
+        "nachkomma": {
+            "title": "Nachkomma",
+            "tooltip": "Der Wert errechnet sich so und so",
+            "show": false,
+            "permission": false,
+            "format": "number"
+        },
+        "checkbox": {
+            "title": "Checkbox",
+            "tooltip": "Die Bechreibung für das Beispiel Checkbox",
+            "filter": true,
+            "format": "yes-no",
+            "format-config": ["<i class=\"fas fa-thumbs-up text-primary\"></i>","<i class=\"fas fa-thumbs-down text-danger\"></i>"]
+        },
+        "mycustomfield": {
+            "title": "Hallo Welt",
+            "field": "nachkomma",
+            "hidden": true
+        },
+        "radio": {
+            "title": "Radio",
+            "tooltip": "Die Bechreibung für das Beispiel Radio",
+            "format": "array",
+            "format-config": ["Wert 0", "Wert 1","Wert 2","Wert 3"],
+            "default": "<em>Leer</em>"
+        },
+        "zusammenhang": {
+            "title": "Zusammenhang",
+            "tooltip": "Die Bechreibung für ein Zusammengehängtes Feld",
+            "type": "multi-field",
+            "field": ["teil1","teil2"],
+            "glue": "",
+            "hidden": false
+        },
+        "special": {
+            "title": "Spezial",
+            "tooltip": "Die Bechreibung für ein Zusammengehängtes Feld",
+            "type": "special",
+            "hidden": false
+        },
+        "count1": {
+            "title": "Count1"
+        },
+        "count2": {
+            "title": "Count1"
+        },
+        "summe": {
+            "title": "Summe",
+            "field": "(`example`.`count1` * `example`.`count2`)",
+            "type": "query"
+        }, 
+        "link": {
+            "title": "Link",
+            "type": "special"
+        }
+    }
+
+}

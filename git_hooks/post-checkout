@@ -1,0 +1,71 @@
+#!C:\"Program Files"\nodejs\node.exe
+
+
+const shell = require("child_process");
+
+console.log("Running post checkout hook");
+postCheckoutHook();
+
+//Name von ausgeschecketen Branch aufrufen
+function postCheckoutHook() {
+	shell.exec("git rev-parse --abbrev-ref HEAD", function(branchCode, branchStdout, branchStderr) {
+		console.log("current branch: "+ branchStdout);
+
+		//Updates von Remote aufrufen und Änderungen von Remote in lokale Branch mergen
+		console.log("pulling from remote");
+		shell.exec("git pull");
+		
+
+
+		//prüfen ob in letzten merge die npm Dateien geändert wurden
+		shell.exec("git --no-pager diff --name-only origin/" + branchStdout + ".."  + branchStdout);
+
+	}, checkGitLog);
+}
+
+//npm install aufrufen falls npm Dateien geändert wurden
+function checkGitLog(logCode, logStdout,logStderr) {
+	if(logStdout.includes("package.json") || logStdout.includes("npm-shrinkwrap.json")){
+		npmInstall();
+	}
+}
+
+
+//npm packages nach update installieren
+function npmInstall() {
+	console.log("new npm package versions were found");
+	console.log("updating npm packages: ");
+
+	shell.exec("npm install", function(npmCode, npmStdout, npmStderr) {
+
+		//Überprüfen ob composer.json oder composer.lock in der letzten Commits geändert wurden
+		if(logStdout.includes("composer.json") || logStdout.includes("composer.lock")){
+			
+			composerInstall();
+
+		} else if(npmStderr) {
+			console.log(npmStderr);
+			console.log("Ein Fehler ist aufgetreten, bitte lösen sie die Konflikte ab und führen Sie npm install")
+			return 1;
+		}
+	});
+}
+
+
+//Composer Packages nach Update installieren
+function composerInstall() {
+	console.log("new composer packages version were found");
+	console.log("updating composer packages");
+
+	shell.exec("composer install", function(composerCode, composerStdout, composerStderr) {
+
+		if(composerCode===0){
+			console.log("composer packages updated successfully");
+			return 0;
+		} else {
+			console.log(composerStderr);
+			return 1;
+		}
+	});
+}
+

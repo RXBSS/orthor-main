@@ -1,0 +1,88 @@
+/**
+
+    TODO:
+    - Text Decoration None machen
+    - Cells Gitter wie beim alten oder nich
+    - 
+
+*/
+
+
+/* Uhrzeiten weiter rechts */
+.fc-direction-ltr .fc-timegrid-slot-label-frame {
+    margin-left: 30px;
+}
+
+.fc-theme-standard td, .fc-theme-standard th {
+    background-color: $white;
+}
+
+
+/* Schriftgröße und Abstand vom Header nach Links, Rechts, Oben, Unten */
+.fc th {
+
+    font-weight: 500;
+    padding: 12px 12px 10px;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 10px;
+    padding-left: 12px;
+}
+
+
+/* Die Achsen in der ersten Spalter */
+.fc .fc-timegrid-axis-cushion,
+.fc .fc-timegrid-slot-label-cushion {
+    padding: 0 4px;
+    padding-top: 0px;
+    padding-right: 4px;
+    padding-bottom: 0px;
+    padding-left: 4px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+
+/* Damit die Überschriften Schwarz sind */
+.fc .fc-col-header-cell .fc-col-header-cell-cushion {
+    color: $black;
+}
+
+
+/* Highlight Today */
+.fc-col-header-cell.fc-day.fc-day-tue.fc-day-today a {
+    color: $green;
+}
+
+/* Damit nicht der Gelbe Cell erscheint */
+.fc .fc-daygrid-day-frame {
+    background: white;
+}
+/* Damit oben das ganztägig nicht oben drin hängt */
+.fc-timegrid-axis-cushion.fc-scrollgrid-shrink-cushion.fc-scrollgrid-sync-inner {
+    margin-right: 15px;
+}
+
+
+/* Events Color */
+//TODO: Font-size
+.fc-timegrid-event .fc-event-time {
+    background: #292929;
+    padding-left: 10px;
+}
+
+.fc-v-event .fc-event-title-container {
+    background: #333333;
+    padding-left: 10px;
+}
+
+
+// .fc-v-event .fc-event-title {
+//     font-size: 13px;
+// }
+
+
+// TODO: Header a Underline soll weg
+// .fc-col-header-cell-cushion {
+//     text-decoration: none;
+// }

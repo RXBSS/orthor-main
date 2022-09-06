@@ -1,0 +1,232 @@
+// Standard Tabelle
+table.table {
+  border: 1px solid #f8f8f8;
+}
+
+// Sorgt dafür, dass die Zeilen nicht überstehen
+table.dataTable {
+  tbody th.focus,
+  tbody td.focus {
+    outline: 2px solid $primary;
+    outline-offset: -2px;
+  }
+
+  tr,
+  td,
+  th {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+.dataTables__top {
+  display: flex;
+  margin-bottom: 10px;
+
+  .action-item {
+    margin: 0.5rem;
+
+    i {
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.dataTables_filter,
+.dataTables_length {
+  font-size: 0;
+  position: relative;
+
+  &:after {
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 900;
+    text-decoration: inherit;
+    left: 1px;
+    bottom: 5px;
+    font-size: 1rem;
+    color: $gray-500;
+  }
+}
+
+// Anzahl der Spalten Menü
+.dataTables_length {
+  flex: 0 0 auto;
+
+  &:after {
+    content: "\f0cb";
+  }
+
+  .form-select-sm {
+    padding: 0.375rem 0.75rem;
+    padding-left: 25px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    width: 100%;
+  }
+}
+
+.dataTables_filter {
+  flex: 1;
+
+  &:after {
+    content: "\f002";
+  }
+
+  &.dt-processing:after {
+    font-weight: 400;
+    content: "\f254";
+  }
+
+  .form-control-sm {
+    padding: 0.375rem 0.75rem;
+    padding-left: 25px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    width: 100%;
+  }
+
+  padding-right: 5px;
+
+  label {
+    width: 100%;
+  }
+}
+
+.dataTables_buttons {
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding-top: 5px;
+  min-height: 28px;
+  border-bottom: 1px solid $gray-300;
+}
+
+// Fixes
+div.dataTables_wrapper div.dataTables_filter input {
+  margin-left: 0;
+}
+
+div.dataTables_wrapper div.dataTables_filter input {
+  width: 100%;
+}
+
+div.dataTables_wrapper .dataTables__foot {
+  display: flex;
+  justify-content: center;
+
+  &.multiple {
+    justify-content: space-between;
+  }
+}
+
+.dataTables_scrollBody {
+  background: $gray-100;
+  margin-bottom: 5px;
+
+  /* width */
+  &::-webkit-scrollbar {
+    height: 3px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: $gray-100;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $gray-300;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: $gray-600;
+  }
+}
+
+// Sortier Icons
+.dataTables_wrapper .table > thead > tr > th {
+  &:before {
+    display: none!important;
+    content: ""!important;
+  }
+
+  &:after {
+    position: absolute;
+    right: 3px;
+    top: 7px!important;
+    line-height: 20px!important;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0dc";
+  }
+
+  &.sorting_desc:after {
+    opacity: 1;
+    content: "\f0de";
+  }
+
+  &.sorting_asc:after {
+    opacity: 1;
+    content: "\f0dd";
+  }
+
+  &.sorting_disabled:after {
+    display: none!important;
+    content: ""!important;
+  }
+}
+
+/* SPEZIELLE STYLES FÜR MODAL */
+.dt-modal {
+  // Body Margin entfernen, damit es kompakter ist
+  .modal-body {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .modal-footer .dt-buttons button {
+    margin-left: 0.25rem;
+  }
+
+  ul.pagination {
+    margin: 0;
+  }
+}
+
+/* Filter für DataTables */
+.dt-filter {
+  display: none;
+  background: $gray-100;
+  padding: $spacer * 0.5;
+  padding-top: 15px;
+  margin: -$spacer * 0.5;
+  margin-bottom: 25px;
+  border-radius: 2px;
+  border: 1px solid $gray-200;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
+}
+
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+  justify-content: center;
+}
+
+.dt-action-readonly {
+  opacity: 0.5;
+}
+
+table.dataTable > tbody > tr.selected > *,
+table.dataTable.table-hover > tbody > tr.selected:hover > * {
+  box-shadow:none;
+}
+
+
+
+table.dataTable thead > tr > th.sorting:after, table.dataTable thead > tr > th.sorting_asc:after, table.dataTable thead > tr > th.sorting_desc:after, table.dataTable thead > tr > th.sorting_asc_disabled:after, table.dataTable thead > tr > th.sorting_desc_disabled:after, table.dataTable thead > tr > td.sorting:after, table.dataTable thead > tr > td.sorting_asc:after, table.dataTable thead > tr > td.sorting_desc:after, table.dataTable thead > tr > td.sorting_asc_disabled:after, table.dataTable thead > tr > td.sorting_desc_disabled:after {
+  top: 50%;
+  content: "";
+}
+

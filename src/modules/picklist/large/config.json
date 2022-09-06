@@ -1,0 +1,24 @@
+{
+    "title": "<i class=\"fas fa-bullhorn\"></i> Large Database Test",
+    "table": {
+        "name": "category"
+    },
+    "fields": {
+        "cat_id": {
+            "title": "ID"
+        },
+        "cat_title": {
+            "title": "Titel"
+        },
+        "cat_pages": {
+            "title": "Seiten"
+        },
+        "cat_subcats": {
+            "title": "Unterkategorien"
+        },
+        "cat_files": {
+            "title": "Dateien"
+        }
+    }
+
+}

@@ -1,0 +1,59 @@
+.btn.btn-primary,
+.btn.btn-warning,
+.btn.btn-success,
+.btn.btn-info {
+    color: $white;
+}
+
+.btn.btn-light {
+    background-color: $button-light;
+}
+
+.btn-outline-light {
+    color: $black;
+}
+
+.btn.btn-light:hover,
+.btn.btn-outline-light:hover {
+    background-color: $gray-400;
+}
+
+.btn-check:checked + .btn-outline-primary, 
+.btn-check:active + .btn-outline-primary, 
+.btn-outline-primary:active, 
+.btn-outline-primary.active, 
+.btn-outline-primary.dropdown-toggle.show,
+.btn-outline-primary:hover {
+    color: $white;
+}
+
+.btn-check:checked + .btn-outline-success, 
+.btn-check:active + .btn-outline-success, 
+.btn-outline-success:active, 
+.btn-outline-success.active, 
+.btn-outline-success.dropdown-toggle.show,
+.btn-outline-success:hover {
+    color: $white;
+}
+
+.btn-check:checked + .btn-outline-warning, 
+.btn-check:active + .btn-outline-warning, 
+.btn-outline-warning:active, 
+.btn-outline-warning.active, 
+.btn-outline-warning.dropdown-toggle.show,
+.btn-outline-warning:hover {
+    color: $white;
+}
+
+.btn-check:checked + .btn-outline-info, 
+.btn-check:active + .btn-outline-info, 
+.btn-outline-info:active, 
+.btn-outline-info.active, 
+.btn-outline-info.dropdown-toggle.show,
+.btn-outline-info:hover {
+    color: $white;
+}
+
+.dropdown-menu-dark {
+    background: $gray-900;
+}

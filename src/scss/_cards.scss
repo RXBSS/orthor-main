@@ -1,0 +1,128 @@
+.card {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    border: none;
+    margin-bottom: $spacer;
+}
+
+.card-body {
+    padding: $card-padding;
+}
+
+.card p {
+    color: $gray-900;
+    margin-bottom: $spacer * 0.5;
+}
+
+.card-title {
+    font-size: 1.3rem;
+}
+
+.card-subtitle {
+    color: $gray-600;
+    margin-bottom: 1rem;
+}
+
+// Header und Footer
+.card-header,
+.card-footer {
+    background: #fafafa;
+    padding-left: $card-padding;
+    padding-right: $card-padding;
+}
+
+// Aktion Items
+.actions {
+    z-index: 1;
+    position: absolute;
+    right: $card-padding;
+    font-size: 1rem;
+}
+
+.action-item {
+    color: $gray-500;
+    margin-left: 0.5rem;
+
+    &:hover {
+        color: $primary !important;
+    }
+
+    // Deaktiviert
+    &.disabled {
+        opacity: 0.5;
+    }
+
+}
+
+// Card Form
+.card.card-form {
+    border-top: 2px solid #aaa;
+}
+
+// Sub Card
+.card .card {
+    border: 2px solid #ddd;
+    box-shadow: inset 0 0 8px $gray-200;
+
+    .card-body {
+        padding: 0.7rem;
+    }
+
+    // Action bei Subcard
+    .actions {
+        right: 0.7rem;
+    }
+}
+
+/* Activation */ 
+.activation-input-container {
+    display: flex;
+}
+
+.activation-input-container .form-group {
+    flex-grow: 3;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.activation-input-container .form-group:first-child {
+    flex-grow: 0;
+    margin-left: 0px;
+    margin-right: 10px;
+}
+
+.activation-input-container .form-group:last-child {
+    margin-right: 0px;
+}
+
+
+.card {
+    &.card-success {
+        border: 1px solid $success;
+
+        h1 i, .h1 i, h2 i, .h2 i, h3 i, .h3 i, h4 i, .h4 i, h5 i, .h5 i, h6 i, .h6 i {
+            color: $success;
+        }
+
+    }
+    &.card-danger {
+        border: 1px solid $danger;
+
+        h1 i, .h1 i, h2 i, .h2 i, h3 i, .h3 i, h4 i, .h4 i, h5 i, .h5 i, h6 i, .h6 i {
+            color: $danger;
+        }
+    }
+    &.card-warning {
+        border: 1px solid $warning;
+
+        h1 i, .h1 i, h2 i, .h2 i, h3 i, .h3 i, h4 i, .h4 i, h5 i, .h5 i, h6 i, .h6 i {
+            color: $warning;
+        }
+    }
+    &.card-info {
+        border: 1px solid $info;
+
+        h1 i, .h1 i, h2 i, .h2 i, h3 i, .h3 i, h4 i, .h4 i, h5 i, .h5 i, h6 i, .h6 i {
+            color: $info;
+        }
+    }
+}

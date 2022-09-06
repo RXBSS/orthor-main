@@ -1,0 +1,48 @@
+{
+    "title": "<i class=\"fas fa-clock\"></i> Öffnungszeiten",
+
+
+    "table": {
+        "name": "example_oeffnungszeiten"
+    },
+
+    "fields": {
+        "id": {
+            "title": "ID",
+            "hidden": true
+        },
+        "tag": {
+            "title": "Tag",
+            "hidden": true
+        },
+        "offen": {
+            "title": "Offen",
+            "hidden": true
+        },
+        "von1": {
+            "title": "Von1",
+            "hidden": true
+        },
+        "bis1": {
+            "title": "Bis1",
+            "hidden": true
+        },
+        "von2": {
+            "title": "Von2",
+            "hidden": true
+        },
+        "bis2": {
+            "title": "Bis2",
+            "hidden": true
+        },
+        "tag2": {
+            "type": "special",
+            "title": "Tag"
+        },
+        "zeit1": {
+            "type": "special",
+            "title": "Öffnungszeit"
+        }
+    }
+
+}

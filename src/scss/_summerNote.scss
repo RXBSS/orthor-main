@@ -1,0 +1,135 @@
+// Toolbar und  Fußleiste in einem grauTon
+.note-popover .popover-content,
+.panel-heading.note-toolbar,
+.note-editor.note-frame .note-statusbar .note-resizebar {
+    background-color: $gray-100;
+}
+
+//Toolbar Buttons Background white
+.note-editor .btn-group > .btn,
+.btn-group-vertical > .btn {
+    background-color: $white;
+    border-color: $gray-500;
+}
+
+//Dropdown Menü
+.note-popover .popover-content .note-dropdown-menu,
+.note-editor .note-toolbar .note-dropdown-menu {
+    height: auto;
+}
+
+//Damit nicht zwei Dropdowns erscheinen
+.dropdown-toggle::after {
+    display: none;
+}
+
+// Modal Design
+.note-modal-body,
+.note-modal-header,
+.note-modal-footer {
+    padding: 1.5rem;
+    border: none;
+}
+
+//Modal Footer
+.note-modal-footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom-right-radius: 1px;
+    padding: 1.5rem;
+    border-bottom-left-radius: 1px;
+    height: auto;
+}
+
+// Label & Checkbox Padding
+.note-modal-content input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+// Modal von Bootstrap
+.note-modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    pointer-events: auto;
+    background-color: $white;
+    background-clip: padding-box;
+    border: 1px solid rgba($black, 0.2);
+    border-radius: 2px;
+    outline: 0;
+    box-shadow: none;
+    z-index: 9999;
+}
+
+// Sonst Sieht man den Editor im Vollbildmodus nicht
+.note-editor.note-frame .note-editing-area,
+.note-editor.note-airframe .note-editing-area {
+    background: white;
+}
+
+/* Damit die Align Dropdown nicht so zusammengequetscht ist */
+
+// .note-dropdown-menu .note-btn-group.note-align {
+//     min-width: 20rem;
+// }
+
+.note-resizebar {
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+}
+
+.note-toolbar {
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+}
+
+.note-btn,
+.note-btn.active,
+.note-btn.focus,
+.note-btn:active,
+.note-btn:focus,
+.note-btn:hover {
+    border-radius: 2px;
+}
+
+.note-frame {
+    border-radius: 2px;
+}
+
+/* Validierung */
+.fv-plugins-bootstrap5 .form.summernote,
+.form-summernote {
+    position: relative;
+
+    
+    .fv-plugins-icon,
+    .row .fv-plugins-icon {
+        position: absolute;
+        top: 100%!important;
+        margin-top: -56px;
+        
+    }
+
+    &.fv-plugins-bootstrap5-row-valid {
+        .fv-plugins-icon {
+            margin-top: -38px;
+            margin-right: 3px;
+        }
+    }
+
+    &.fv-plugins-bootstrap5-row-invalid .note-editor.note-frame .note-statusbar {
+        border-color: $danger;
+    }
+   
+
+    &.fv-plugins-bootstrap5-row-valid .note-editor.note-frame .note-statusbar {
+        border-color: $success;
+    }
+}
+
+.note-editable p {
+    margin:0;
+}

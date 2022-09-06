@@ -1,0 +1,441 @@
+.form-control,
+.form-select {
+    border: none;
+    padding: 0.1rem 0;
+    border-bottom: 1px solid $gray-300;
+    border-radius: 0px;
+    background: #fff;
+
+    &:focus {
+        border-bottom: 1px solid $primary;
+        box-shadow: none;
+        background: transparent;
+    }
+    
+    &:read-only,
+    &:disabled {
+        background: repeating-linear-gradient(45deg, transparent, transparent 10px, #fcfcfc 10px, #fcfcfc 20px);
+    }
+
+    &:read-only:focus {
+        border-color: $gray-500;
+    }
+}
+
+.form-select {
+    &:read-only {
+        background: transparent;
+    }
+    &:disabled {
+        background: repeating-linear-gradient(45deg, transparent, transparent 10px, #fcfcfc 10px, #fcfcfc 20px);
+    }
+}
+
+
+// Bugfix
+.fv-plugins-bootstrap5 .form-select.fv-plugins-icon-input.is-valid,
+.fv-plugins-bootstrap5 .form-select.fv-plugins-icon-input.is-invalid,
+.fv-plugins-bootstrap5 .form-control.fv-plugins-icon-input.is-valid,
+.fv-plugins-bootstrap5 .form-control.fv-plugins-icon-input.is-invalid {
+    &:read-only,
+    &:disabled {
+        background: repeating-linear-gradient(45deg, transparent, transparent 10px, #fcfcfc 10px, #fcfcfc 20px);
+    }
+}
+
+
+
+.form-label {
+    font-size: 0.75rem;
+    color: $gray-500;
+    margin-bottom: 0;
+}
+
+.form-floating > .form-control,
+.form-floating > .form-select {
+    line-height: 1.5;
+    padding: 0.1rem 0 0.1rem 3px;
+
+    &:focus {
+        padding-top: 2rem;
+        padding-bottom: 0rem;
+    }
+
+    &:not(:placeholder-shown) {
+        padding-top: 2rem;
+        padding-bottom: 0rem;
+    }
+}
+
+.form-floating > .form-select[multiple] {
+    min-height: 100px;
+
+    &:before {
+        content: " ";
+        top: 0;
+        left: 0;
+        position: absolute;
+        height: 33px;
+        width: calc(100% - 10px);
+        background: $white;
+    }
+}
+
+.form-floating > label {
+    color: $gray-500;
+    padding: 2rem 0rem 0rem 0rem;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select ~ label {
+    opacity: 1;
+    padding-top: 1.5rem;
+}
+
+// Box Shadow bei Valid und Invalid entfernen
+.was-validated .form-control:valid:focus,
+.form-control.is-valid:focus,
+.was-validated .form-control:invalid:focus,
+.form-control.is-invalid:focus,
+.was-validated .form-select:valid:focus,
+.form-select.is-valid:focus,
+.was-validated .form-select:invalid:focus,
+.form-select.is-invalid:focus {
+    box-shadow: none;
+}
+
+// Sorgt dafür, dass ohne Form Floating ein Standard Margin dabei ist
+.form-group:not(.form-floating) {
+    margin-bottom: 1rem;
+}
+
+// Setzt die Farbe der Checkboxen
+.form-check-input {
+    border-color: $body-color;
+}
+
+.form-check-input[disabled] ~ .form-check-label,
+.form-check-input:disabled ~ .form-check-label {
+    opacity: 1;
+}
+
+.form-floating-check,
+.form-floating-radio {
+    padding-top: 12px;
+    min-height: 58px;
+
+    &.form-group:not(.form-floating) {
+        margin-bottom: 0;
+    }
+
+    .form-label {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+/* Formvalidation.io Anpassungen */
+.fv-plugins-bootstrap5 .fv-plugins-icon,
+.fv-plugins-bootstrap5 .row .fv-plugins-icon {
+    width: 25px;
+    right: -5px;
+    top: 16px;
+}
+
+.fv-plugins-bootstrap5:not(.fv-plugins-bootstrap5-form-inline) label ~ .fv-plugins-icon {
+    top: 14px;
+}
+
+.invalid-feedback {
+    margin-top: 0;
+}
+
+// Verhindert das bei Select das Icon als Hintergrund angezeigt wird
+.was-validated .form-select:valid:not([multiple]):not([size]),
+.was-validated .form-select:valid:not([multiple])[size="1"],
+.form-select.is-valid:not([multiple]):not([size]),
+.form-select.is-valid:not([multiple])[size="1"],
+.was-validated .form-select:invalid:not([multiple]):not([size]),
+.was-validated .form-select:invalid:not([multiple])[size="1"],
+.form-select.is-invalid:not([multiple]):not([size]),
+.form-select.is-invalid:not([multiple])[size="1"] {
+    background-image: none;
+}
+
+.was-validated .form-check-input:invalid ~ .form-check-label,
+.form-check-input.is-invalid ~ .form-check-label,
+.was-validated .form-check-input:valid ~ .form-check-label,
+.form-check-input.is-valid ~ .form-check-label {
+    color: $body-color;
+}
+
+.fv-plugins-bootstrap5 .fv-plugins-bootstrap5-row-invalid .fv-plugins-icon {
+    color: $red;
+}
+
+.fv-plugins-bootstrap5 .fv-plugins-bootstrap5-row-valid .fv-plugins-icon {
+    color: $green;
+}
+
+.was-validated .form-control:invalid,
+.form-control.is-invalid,
+.was-validated .form-control:valid,
+.form-control.is-valid {
+    padding-right: 1.3em;
+}
+
+// Workaround Native Icon Bug
+.fv-plugins-bootstrap5 .fv-plugins-icon-container .fv-plugins-icon {
+    z-index: -1;
+}
+
+.fv-plugins-bootstrap5 .fv-plugins-bootstrap5-row-invalid.fv-plugins-icon-container .fv-plugins-icon,
+.fv-plugins-bootstrap5 .fv-plugins-bootstrap5-row-valid.fv-plugins-icon-container .fv-plugins-icon {
+    z-index: 3;
+}
+
+.input-group .btn {
+    margin-right: 10px;
+}
+
+// Form Switch Label
+.form-switch .form-label {
+    margin-left: -36px;
+}
+
+// Form Range für Icon von FormValidation
+
+.fv-plugins-bootstrap5:not(.fv-plugins-bootstrap5-form-inline) .form-range label ~ .fv-plugins-icon {
+    top: 0px;
+}
+
+.form-file-input {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    overflow: hidden;
+
+    .draw-btn {
+        height: 50px;
+        width: 50px;
+        background-color: red;
+    }
+}
+
+.form-file-input + input[type="file"] {
+    display: none;
+}
+
+.form-unit {
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    color: $gray-500;
+    right: 0px;
+    top: 34px;
+    -webkit-transition: opacity 300ms, visibility 300ms;
+    transition: opacity 300ms, visibility 300ms;
+}
+
+.form-floating > .form-control:focus ~ .form-unit,
+.form-floating > .form-control:not(:placeholder-shown) ~ .form-unit,
+.form-floating > .form-select ~ .form-unit {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+.fv-plugins-bootstrap5-row-valid .form-unit,
+.fv-plugins-bootstrap5-row-invalid .form-unit {
+    right: 20px;
+}
+
+input.more-readable {
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
+        Courier New, monospace, serif;
+    font-size: 16px;
+    letter-spacing: 0.08em;
+}
+
+.form-check-input {
+    &.color-danger {
+        &:checked {
+            background-color: $danger;
+            border-color: $danger;
+        }
+
+        &:focus {
+            border-color: rgb(192 57 43 / 25%);
+            box-shadow: 0 0 0 0.25rem rgb(192 57 43 / 25%);
+        }
+    }
+    &.color-warning {
+        &:checked {
+            background-color: $warning;
+            border-color: $warning;
+        }
+
+        &:focus {
+            border-color: rgb(243 156 18 / 25%);
+            box-shadow: 0 0 0 0.25rem rgb(243 156 18 / 25%);
+        }
+    }
+    &.color-info {
+        &:checked {
+            background-color: $info;
+            border-color: $info;
+        }
+
+        &:focus {
+            border-color: rgb(52 152 219 / 25%);
+            box-shadow: 0 0 0 0.25rem rgb(52 152 219 / 25%);
+        }
+    }
+}
+
+.form-switch .form-check-input {
+    &.color-danger:focus:not(:checked) {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgb%28192%2057%2043%20%2F%2025%25%29'/%3e%3c/svg%3e");
+    }
+    &.color-warning:focus:not(:checked) {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgb%28243%20156%2018%20%2F%2025%25%29'/%3e%3c/svg%3e");
+    }
+    &.color-info:focus:not(:checked) {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgb%2852%20152%20219%20%2F%2025%25%29'/%3e%3c/svg%3e");
+    }
+}
+
+
+// Bugfix Readonly Background
+.form-floating:before {
+    background: #fff;
+    content: " ";
+    position: absolute; 
+    height: 32px;
+    width: 100%;
+}
+
+.form-gray .form-control, .form-gray .form-select , .form-gray.form-floating:before {
+    background: #EEEEEE;
+}  
+
+
+.form-hide-icon .fv-plugins-icon-check {
+    display:none;
+}
+
+.form-hide-error-icon.fv-plugins-bootstrap5-row-invalid .fv-plugins-icon-check {
+    display:none;
+}
+
+.form-hide-success-icon.fv-plugins-bootstrap5-row-valid .fv-plugins-icon-check {
+    display:none;
+}
+
+
+input[type=file]::file-selector-button {
+    background: $gray-100;
+    margin-left: 0;
+    border-right: none;
+    font-size: 0.9em;
+}
+  
+
+input[type=file]::file-selector-button:hover {
+    background: $gray-200;
+   
+}
+
+
+select.form-select option:checked {
+    color: white;
+    background: #a1ce69;
+}
+
+
+option:hover {
+    color: white;
+    background-color: $primary;
+}
+
+
+select.form-select[multiple]:focus option:checked {
+    color: white;
+    background: linear-gradient(0deg, $primary 0%, $primary 100%);
+}
+  
+
+select.form-select[multiple] option:checked {
+    color: white;
+    background: linear-gradient(0deg, #a1ce69 0%, #a1ce69 100%);
+}
+
+
+
+/*
+option:checked {
+color: white;
+background: linear-gradient(0deg, red 0%, red 100%);
+}
+*/
+
+
+// danger
+input[type=range].slider-danger::-webkit-slider-thumb {
+    background-color: $danger;
+}
+
+// Warning
+input[type=range].slider-warning::-webkit-slider-thumb {
+    background-color: $warning;
+}
+
+// Success
+input[type=range].slider-success::-webkit-slider-thumb {
+    background-color: $success;
+}
+
+// Info
+input[type=range].slider-info::-webkit-slider-thumb {
+    background-color: $info;
+}
+
+// Secondary
+input[type=range].slider-secondary::-webkit-slider-thumb {
+    background-color: $secondary;
+}
+
+.form-floating.label-info > label,
+.form-control.label-info > label {
+    color: mix(white, $info, 30);
+}
+
+.form-floating.label-success > label,
+.form-control.label-success > label {
+    color: mix(white, $success, 30);
+}
+
+.form-floating.label-warning > label,
+.form-control.label-warning > label {
+    color: mix(white, $warning, 30);
+}
+
+.form-floating.label-danger > label,
+.form-control.label-danger > label {
+    color: mix(white, $danger, 30);
+}
+
+input[data-unitaction] + .form-unit:hover {
+    color: $primary;
+    cursor: pointer;
+}

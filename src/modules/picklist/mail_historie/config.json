@@ -1,0 +1,17 @@
+{
+    "title": "<i class=\"fas fa-bullhorn\"></i> Large Database Test",
+    "table": {
+        "name": "_mail_historie"
+    },
+    "fields": {
+        "id": {
+            "title": "ID"
+        },
+        "zeitstempel": {
+            "title": "zeitstempel"
+        },
+        "empfaenger": {
+            "title": "empfaenger"
+        }
+    }
+}

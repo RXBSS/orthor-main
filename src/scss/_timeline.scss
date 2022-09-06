@@ -1,0 +1,309 @@
+/* Zeitleiste */
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Strich */
+ul.timeline:before {
+    content: " ";
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 70px;
+    width: 2px;
+    height: 100%;
+    margin-top: -10px;
+    z-index: 400;
+}
+
+// Startpunkt
+ul.timeline:after {
+    content: " ";
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 60px;
+    width: 20px;
+    height: 2px;
+    z-index: 400;
+    bottom: 0px;
+}
+
+// Main Container
+ul.timeline > li {
+    margin: 15px 0px 15px -32px;
+    cursor: pointer;
+
+    &:first-child {
+        margin-top: 0px;
+    }
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+
+    .tl-content {
+        display: flex;
+        flex-direction: column;
+
+        // Pre- und Sub Content und Date
+        .tl-content-pre,
+        .tl-content-sub,
+        .tl-date {
+            font-size: 0.72rem;
+            color: #aaa;
+        }
+
+        .tl-content-pre,
+        .tl-content-sub {
+            padding-left: 114px;
+        }
+
+        // Main Bubble
+        .tl-content-main-bubble {
+            display: inline-block;
+            color: #333;
+            background: $white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-size: 0.82rem;
+        }
+
+        .tl-circle {
+            width: 17px;
+            min-width: 17px;
+            max-width: 17px;
+            position: relative;
+
+            // Kugel an das Icon bauen
+            &:after {
+                // Kugel bauen
+                content: " ";
+                display: inline-block;
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                background: $primary;
+                border-radius: 50%;
+                border: 2px solid $primary;
+
+                // Kugel Positionieren
+                left: 2px;
+
+                top: 5px;
+
+                // top: 50%;
+                // margin-top: -5px;
+
+                z-index: 400;
+            }
+        }
+
+        .tl-icon {
+            min-width: 35px;
+            max-width: 35px;
+            width: 35px;
+            text-align: center;
+        }
+
+        .tl-date {
+            padding-top: 2px;
+            width: 63px;
+            min-width: 63px;
+            max-width: 63px;
+            text-align: right;
+        }
+    }
+
+    // Hover über das LI
+    &:hover .tl-circle:after {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
+}
+
+// In Sidebar, Card und Modal standardmäßig Grau anzeigen
+.sidebar ul.timeline > li,
+.card ul.timeline > li,
+.modal ul.timeline > li {
+    .tl-content .tl-content-main-bubble {
+        background: $gray-100;
+    }
+}
+
+// Zum Überschreiben der Timeline in Grau
+.tl-gray ul.timeline > li .tl-content .tl-content-main-bubble {
+    background: $gray-100 !important;
+}
+
+// Zum Überschreiben der Timeline in Weiß
+.tl-white ul.timeline > li .tl-content .tl-content-main-bubble {
+    background: $white !important;
+}
+
+// Future und Past
+.tl-future ul.timeline > li {
+    &.tl-is-future {
+        .tl-icon,
+        .tl-content-main-bubble,
+        .tl-content-pre,
+        .tl-content-sub,
+        .tl-date span {
+            opacity: 0.5;
+        }
+
+        &:hover {
+            .tl-icon,
+            .tl-content-main-bubble,
+            .tl-content-pre,
+            .tl-content-sub,
+            .tl-date span {
+                opacity: 1;
+            }
+        }
+
+        .tl-date:after {
+            opacity: 1;
+        }
+    }
+}
+
+// Zum Debuggen
+.tl-debug ul.timeline > li {
+    .tl-content {
+        background: green;
+
+        .tl-content-pre,
+        .tl-content-sub,
+        .tl-date {
+            background: red;
+        }
+
+        .tl-icon {
+            background: blue;
+        }
+
+        .tl-date {
+            background: purple;
+        }
+
+        .tl-circle {
+            background: yellow;
+        }
+    }
+}
+
+/* Klasses --- */
+
+// Dot
+@each $color, $value in $theme-colors {
+    ul.timeline > li.dot-#{$color} .tl-content .tl-circle:after {
+        background: $value;
+        border-color: $value;
+    }
+}
+
+
+// Icon
+@each $color, $value in $theme-colors {
+    ul.timeline > li.icon-#{$color} .tl-icon {
+        color: $value;
+    }
+}
+
+// Bubble
+@each $color, $value in $theme-colors {
+    ul.timeline > li.bubble-#{$color} .tl-content .tl-content-main-bubble,
+    .sidebar ul.timeline > li.bubble-#{$color} .tl-content .tl-content-main-bubble,
+    .card ul.timeline > li.bubble-#{$color} .tl-content .tl-content-main-bubble,
+    .modal ul.timeline > li.bubble-#{$color} .tl-content .tl-content-main-bubble {
+        color: white;
+        background: $value;
+    }
+}
+
+ul.timeline > li.bubble-light .tl-content .tl-content-main-bubble,
+.sidebar ul.timeline > li.bubble-light .tl-content .tl-content-main-bubble,
+.card ul.timeline > li.bubble-light .tl-content .tl-content-main-bubble,
+.modal ul.timeline > li.bubble-light .tl-content .tl-content-main-bubble {
+    color: #333;
+}
+
+.bubble-tight .tl-content-main .d-flex.flex-row {
+    align-items: flex-start;
+}
+
+ul.timeline > li.bubble-label .tl-content .tl-content-main-bubble {
+    border-radius: 12px;
+    padding: 2px 12px;
+}
+
+.bubble-silent .tl-content-main-bubble {
+    color: $gray-400 !important;
+    background: none !important;
+    box-shadow: none !important;
+}
+
+.sidebar ul.timeline > li.bubble-silent .tl-content .tl-content-main-bubble,
+.card ul.timeline > li.bubble-silent .tl-content .tl-content-main-bubble,
+.modal ul.timeline > li.bubble-silent .tl-content .tl-content-main-bubble {
+    color: $gray-300 !important;
+}
+
+
+// None Klassen
+ul.timeline > li.date-none .tl-content .tl-date {
+    opacity:0;
+}
+
+ul.timeline > li.dot-none .tl-content .tl-circle {
+    opacity:0;
+}
+
+ul.timeline > li.icon-none .tl-content .tl-icon {
+    opacity:0;
+}
+
+ul.timeline > li.bubble-none .tl-content .tl-content-main-bubble {
+    opacity:0;
+}
+
+
+
+
+// Collapse
+ul.timeline > li.bubble-collapse .tl-content .tl-content-main-bubble,
+.sidebar ul.timeline > li.bubble-collapse .tl-content .tl-content-main-bubble,
+.card ul.timeline > li.bubble-collapse .tl-content .tl-content-main-bubble,
+.modal ul.timeline > li.bubble-collapse .tl-content .tl-content-main-bubble {
+    max-height: 90px;
+    overflow: hidden;
+}
+
+// Scroll
+ul.timeline > li.bubble-scroll .tl-content .tl-content-main-bubble,
+.sidebar ul.timeline > li.bubble-scroll .tl-content .tl-content-main-bubble,
+.card ul.timeline > li.bubble-scroll .tl-content .tl-content-main-bubble,
+.modal ul.timeline > li.bubble-scroll .tl-content .tl-content-main-bubble {
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+ul.timeline > li.bubble-scroll-sm .tl-content .tl-content-main-bubble,
+.sidebar ul.timeline > li.bubble-scroll-sm .tl-content .tl-content-main-bubble,
+.card ul.timeline > li.bubble-scroll-sm .tl-content .tl-content-main-bubble,
+.modal ul.timeline > li.bubble-scroll-sm .tl-content .tl-content-main-bubble {
+    max-height: 50px;
+    overflow-y: auto;
+}
+
+ul.timeline > li.bubble-scroll-lg .tl-content .tl-content-main-bubble,
+.sidebar ul.timeline > li.bubble-scroll-lg .tl-content .tl-content-main-bubble,
+.card ul.timeline > li.bubble-scroll-lg .tl-content .tl-content-main-bubble,
+.modal ul.timeline > li.bubble-scroll-lg .tl-content .tl-content-main-bubble {
+    max-height: 200px;
+    overflow-y: auto;
+}

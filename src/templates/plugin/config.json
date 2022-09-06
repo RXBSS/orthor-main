@@ -1,0 +1,11 @@
+{
+    "dest": "src/plugins",
+    "name": "neues-plugin",
+    "files": [
+        "~~name~~-api.php",
+        "~~name~~-handle.php",
+        "~~name~~.css",
+        "~~name~~.js",
+        "~~name~~.php"
+    ]
+}

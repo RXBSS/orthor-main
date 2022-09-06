@@ -1,0 +1,13 @@
+{
+    "fields": {
+        "beschreibung": {
+            "hidden": true
+        },
+        "bezeichnung": {
+            "hidden": true
+        },
+        "betrag": {
+            "format-config": ["€"]
+        }
+    }
+}

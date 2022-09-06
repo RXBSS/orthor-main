@@ -1,0 +1,30 @@
+{
+    "table": {
+        "name": "_laender"
+    },
+    "fields": {
+        "code": {
+            "title": "Code",
+            "filter": true
+        },
+        "en": {
+            "title": "Englisch"
+        },
+        "de": {
+            "title": "Deutsch"
+        },
+        "es": {
+            "title": "Spanisch"
+        },    
+        "fr": {
+            "title": "Französisch"
+        },
+        "it": {
+            "title": "Italienisch"
+        },
+        "ru": {
+            "title": "Russisch"
+        }
+    }
+
+}

@@ -1,0 +1,172 @@
+.subtext {
+    color: $gray-600;
+    font-weight: 400;
+    margin-top: -0.5rem;
+    line-height: 1.5;
+}
+
+h1 i,
+h2 i,
+h3 i,
+h4 i,
+h5 i,
+h6 i {
+    color: $primary;
+}
+
+.accordion,
+.accordion-header,
+.accordion-button,
+.accordion-body {
+    background-color: $white;
+}
+
+.accordion-button {
+    i {
+        min-width: 28px;
+    }
+}
+
+// Alerts
+.alert-success, .alert-primary {
+    background-color: $primary;
+    border-color: $primary;
+    color: $white;
+
+    .alert-link, i {
+        color: $white;
+    }
+}
+
+.alert-danger {
+    background-color: $danger;
+    border-color: $danger;
+    color: $white;
+
+    .alert-link, i {
+        color: $white;
+    }
+}
+
+.alert-warning {
+    background-color: $warning;
+    border-color: $warning;
+    color: $white;
+
+    .alert-link, i {
+        color: $white;
+    }
+}
+
+.alert-dark {
+    background-color: $dark;
+    border-color: $dark;
+    color: $white;
+
+    .alert-link, i {
+        color: $white;
+    }
+}
+
+.alert-secondary {
+    background-color: $gray-800;
+    border-color: $gray-800;
+    color: $white;
+
+    .alert-link, i {
+        color: $white;
+    }
+}
+
+.alert-info {
+    background-color: $info;
+    border-color: $info;
+    color: $white;
+
+    .alert-link, i {
+        color: $white;
+    }
+}
+
+i.inline-icon {
+    display: inline-block;
+    min-width: 19px;
+    text-align: center;
+}
+
+i.inline-icon-left {
+    display: inline-block;
+    min-width: 19px;
+    text-align: left;
+}
+
+.dropdown-item i,
+i.inline-icon-right {
+    display: inline-block;
+    min-width: 19px;
+    text-align: left;
+}
+
+
+.alert  {
+
+    // Grunsätzliches
+    a {
+        text-decoration: underline;
+    }
+    
+    &.alert-primary a,
+    &.alert-secondary a,
+    &.alert-success a,
+    &.alert-danger a,
+    &.alert-warning a,
+    &.alert-info a {
+        color: $white;
+
+        &:hover {
+            color: $gray-100;
+        }
+
+    }
+
+    &.alert-soft-secondary a {
+        color: $gray-900;   
+
+        &:hover {
+            color: shade-color($gray-900, $btn-hover-bg-shade-amount)
+        }
+    }
+
+    &.alert-soft-danger a {
+        color: $danger;   
+
+        &:hover {
+            color: shade-color($danger, $btn-hover-bg-shade-amount)
+        }
+    }
+
+    &.alert-soft-warning a {
+        color: $warning;   
+
+        &:hover {
+            color: shade-color($warning, $btn-hover-bg-shade-amount)
+        }
+    }
+
+    &.alert-soft-info a {
+        color: $info;   
+
+        &:hover {
+            color: shade-color($info, $btn-hover-bg-shade-amount)
+        }
+    }
+
+
+    
+
+}
+
+
+
+ 
+

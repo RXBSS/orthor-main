@@ -1,0 +1,228 @@
+// Sidebar
+.sidebar {
+    z-index: 5;
+    position: fixed;
+    height: calc(100vh - 70px);
+    top: $navbar-height;
+    background: $gray-900;
+    width: $sidebar-width;
+    overflow-y: scroll;
+    
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    // Hide Scrollbar on Firefox
+    scrollbar-width: none;
+
+    // Internet Explorer 11
+    -ms-overflow-style: none;
+
+    .sidebar-inner {
+        min-height: calc(100vh - 70px);
+        padding: $spacer;
+    }
+
+    // Button
+    .btn-toggle {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        color: $white;
+        font-size: 1.1em;
+        outline: 0;
+        padding: 0;
+        border-color: transparent;
+
+        // Hover und Focus
+        &:hover,
+        &:active,
+        &:focus {
+            color: $primary;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        // Icon
+        i {
+            width: 30px;
+        }
+    }
+
+    .btn-toggle-nav {
+        padding-left: 30px;
+        padding-bottom: 10px;
+        li {
+            position: relative;
+            padding: 5px 0;
+
+            a {
+                color: $white;
+                @include transition($btn-transition);
+
+                &:hover,
+                &:focus {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+.sidebar .btn-toggle.active:before,
+.sidebar .btn-toggle-nav > li > a.active:before {
+    // animation: flash 1.5s linear infinite;
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: $primary;
+    border-radius: 50%;
+    top: 13px;
+    left: -12px;
+    position: absolute;
+    margin: auto;
+}
+
+.sidebar .btn-toggle.active:before {
+    top: 9px;
+    left: -7px;
+}
+
+// Sidebar - User Icon
+.sidebar .current-user {
+    color: $white;
+    padding: $spacer $spacer * 0.5;
+    border-radius: 2px;
+    font-size: 0.9em;
+
+    &.is-logged-in {
+        background: $primary;
+    }
+
+    &.not-logged-in {
+        background: $danger;
+    }
+
+    .user-icon {
+        padding: 0px 10px;
+    }
+}
+
+// Sidebar - Version
+.sidebar .version {
+    text-align: center;
+
+    i {
+        font-size: 10px;
+    }
+}
+
+// Sidebar Toggle
+.sidebar-toggler {
+    position: fixed;
+    height: 30px;
+    width: 30px;
+    left: 0px;
+    bottom: 15px;
+
+    z-index: 6;
+    text-align: center;
+
+    opacity: 0.5;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    a {
+        color: $white;
+    }
+
+    i {
+        font-size: 1.2em;
+        line-height: 30px;
+    }
+}
+
+
+body.with-transition {
+    .sidebar-toggler {
+        transition: 0.15s all ease;
+    }
+
+    .sidebar {
+        transition: 0.15s margin ease;
+    }
+}
+
+
+body.closed-sidebar .sidebar {
+    margin-left: -$sidebar-width;
+}
+
+body.closed-sidebar .sidebar-toggler {
+    background: $gray-800;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+// Sidebar Submenü
+.collapsing .btn-toggle,
+.collapse .btn-toggle {
+    padding: 0;
+    border: 0;
+    height: auto;
+    max-height: 19px;
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+}
+
+.collapse .collapsing .btn-toggle-nav,
+.collapse .collapse .btn-toggle-nav {
+    padding-top: 10px;
+    padding-left: 18px;
+    padding-bottom: 0px;
+}
+
+.sidebar-right {
+    right: 0px;
+    background: #fff;
+
+    .sidebar-actions {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    .sidebar-loader {
+        text-align: center;
+        margin-top: 100px;
+
+        i {
+            color: #555;
+        }
+    }
+}
+
+
+// Sidebar List
+.sidebar.sidebar-right {
+
+    ul.list-group {
+        margin: 0 -1rem;
+
+        .list-group-item {
+            border-left: 0;
+            border-right: 0;
+        }
+
+        .list-group-item:first-child,
+        .list-group-item:last-child {
+            border-radius:0;
+        }
+
+    }
+}
+

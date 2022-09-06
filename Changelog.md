@@ -1,0 +1,599 @@
+### Version 1.0.23
+- SignaturePad: `getSignaturePadVal` - Funktion mit dem der wert augelesen werden kann und zur Weiterverarbeitung genutzt werden kann
+- Activation: Kann jetzt auch damit umgehen, wenn jQuery Elemente übergeben werden statt Selectoren
+- App: Wenn man die Seite verlässt werden die Keys `shift`, `ctrl`, `alt` auf `false` gesetzt
+- App: `simpleRequest` Error Callback unterteilt in `cbError` und `cbServerError`
+- App: `simpleRequest` dokumentiert
+- App: `simpleRequest` loggt bei Error und Server Error jetzt standardmäßig in die Console, wenn es keinen cb gibt
+- Gulp: Bei Veränderungen von `global.js` Skripte aus den Plugins wurden diese nicht mit in `dist` kopiert
+- Quickselect: Select Multiple besser dokumentiert
+- Quickselect: Quick Buttons gebaut
+- Form Handler: Neue Funktion `setFieldReadonly` zum Readonly setzen eines einzelnen Felds 
+- Form Handler: Neue Funktion `getField` um eine einzelnes Feld als jQuery Element zu erhalten mit Hilfe des Namens
+- Quickselect: Bei Multiple und `setData` bzw. `setDataNoTrigger` konnte man doppelte Ids eintragen. Das wird jetzt abgefangen und nur der Text wird geändert
+- Quickselect: Bei Quick Actions `single` wird jetzt ein Objekt statt ein Array erstellt, damit die Reihenfolge die gleiche ist, wie im Selects
+- Request API: Neue Funktion `deleteMultipleByKey` hinzugefügt
+- Form Handler: Bei Quick Actions von Quickselect werden jetzt mit dem Hauptelement auf Readonly gesetzt
+- Quickselect API: Akzeptiert jetzt auch einen `String` bei `fields`
+- Quickselect API: API in mehrere Funktionen `renderRow` & `renderText` unterteilt, damit diese besser extenden kann
+- Quickselect API: Bei Quick Actions wird jetzt das Button Element mit übergeben
+- App/Navigation: Mit `data-page=mysite` im body Tag kann man jetzt bestimmen, auf welche Seite sich die Navigation öffnet
+- Select2: Bei `multi` wird jetzt die Search Bar ausgeblendet, wenn das Element nicht fokussiert ist
+- Formvalidation.io Update von Version 1.8.2 auf 1.10.0
+- App: Standard Tastenkombinationen lösen jetzt ein Change Event aus
+- Request API: `sanitize` hat jetzt eine Funktion um `true` und `false` als Boolean und nicht als String zu setzen
+- Quickselect API: Kann bei `setData` und `setDataNoTrigger` jetzt auch nur einen Wert akzeptieren und lädt dann den Text dynamisch nach
+- Form Handler: Kann jetzt einzelne Werte an Quickselect API übergeben was die Funktion `mergeForList` im Request unnötig macht
+- Kalkulationsverbund nach Orthor umgezogen
+- Form Handler: Wenn `0` als Wert ausgelesen wurde, wurde dies nicht in das Input Feld geschrieben
+- Form Handler: Funktion `getEl` als Synonym für `getField` eingebaut
+- Form Handler: Funktion `getDataField` wird zu `getFieldData` und hat ebenfalls ein Synonym `getElData`
+- Quickselect: Man darf nicht `align-self-end` nehmen, da sonst die Buttons bei Validieren nach unten rutschen
+- Snippets: Weitere Snippets für Quickselect und für Quickselect Buttons hinzugefügt
+- Form Handler: Neue Namensschreibweise `setDataField` heißt jetzt `setFieldData`
+- Form Handler: Die Funktion `setFieldData` aktzeptiert jetzt auch ein Array und führt dann einen Loop durch
+- Form Handler: Neue Funktion `setSomeData` um ein Objekt mit key-Value pairs zu setzen
+- Request API: Neue Funktion `deleteByKeyValuePair`
+- Request API: Neue Funktion `supplement` zum Hinzufügen, Editieren bzw. löschen in einem 
+- Request API: Neue Funktion `extractValueFromMultiArray` um aus einem Array aus Arrays einen bestimmten Wert zu extrahieren
+
+### Version 1.0.22
+- Summernote: Dokumentation erweitert
+- Summernote: Request API hat jetzt die Funktion `extractImagesFromText` für Summernote
+- Picklist API: Formatierung Substring führt immer `strip_tags` um Probleme mit HTML zu vermeiden
+- Picklist API: Formatierung Substring führt immer `trim` Funktion durch
+- Picklist API: statt `substr` wird jetzt `mb_substr` verwendet um UTF-8 Probleme zu vermeiden
+- Quickselect API: Quickselect kann jetzt mit HTML umgehen, dass aus der Datenbank zurück kommt!
+- Quickselect API: Man kann Quickselect jetzt ein Schema mitgeben, dass mit dem man den Antwort-Text gestalten kann
+- Quickselect API: Besseres Log zum Debuggen, falls die Query fehlschlägt
+- Quickselect API: Man braucht jetzt keine Config mehr um ein Quickselect zu erstellen [#240]
+- Quickselect API: Dokumentation erstellt
+- Quickselect API: Weitere Beispiele erstellt
+- FormHandler: Neue Quickselect API Funktionen übernommen
+- SQL: Länder Daten angepasst (Code jetzt in Kleinbuchstaben)
+- Snippets: Snippet für Font Awesome Icons eingefügt
+- Picklist API: Der Wert `calculation` wurde jetzt in `query` umbenannt
+- Picklist API: Den Parameter `filterOnStart` in `showFilterOnStart` umbenannt
+- Picklist API: Statt `Unbekannt` kommt jetzt `title_missing` wenn der title in der Config fehlt
+- Form API: Die getData Funktion hat auch Felder der Pickliste (z.B. Menü Length) ausgelesen
+- App: Steuerung von Datums- und Zeitfeldern hat nicht mehr richtig funktioniert
+- Form API: Neuer Event Listner `revalidate`. Dies kann auf jedes Element getriggert werden und es wird revalidiert
+- App: Standard Tastenkombinationen lösen jetzt ein Revalidate Event aus
+- SweetAlert: Wenn man ein anderes Icon, als das für den Hintergrund vorgesehene verwendet, dann passen die Farben nicht [#233]
+- Formatter: Hat jetzt `Betrag` als Alias für `Waehrung`
+- Formatter: Wandelt den ersten Buchstaben jetzt automatisch in Großbuchstaben um
+- Auto Validation: Bug mit `275760-12-31` nicht zu beheben. Entsprechend Dokumentiert [#183]
+- Alert: Link Farbe sollte nicht grün sondern entsprechend der Farbe des Alerts sein [#235]
+- FAB: Icons bei den kleinen FAB-Buttons sind etwas schepp. Wert von `0.9em` auf `0.909em` gesetzt [#164]
+
+### Version 1.0.21
+- npm Update to latest 
+- App: Get Loader kann jetzt eine Größe als Argument verstehen
+- SweetAlert: Klasse für Deny Button überall hinzugefügt
+- SweetAlert: Anpassung des Margins bei den Buttons
+- Timeline: Wenn kein Icon angegeben wird, dann wird auch kein ausgegeben
+- Timeline: Diverse Stye Möglichkeiten hinzugefügt [#225]
+- SweetAlert: Neuer Baustein für `app.alert` und `app.notify` names `delete`
+- Formatter JS: Bugfix Formatter hat bei autoFloat `0` als `false` interpretiert und den Fehler `maximumFractionDigits value is out of range` geworfen
+- Form: Labels der Form können jetzt ebenfalls in `success`, `warning`, `danger` und `info` deklariert werden mit der Klasse `label-*` 
+- Bootstrap Update 5.2.0
+- Fix Bootstrap Navigation wurden Rahmen angezeigt [#234]
+- Form: Neues Event `load` Event hinzugefügt
+- Form: Neues Event `form-input` das auf jedes Element getriggert wird beim setzen, darauf reagiert Formatter und formatiert
+- Formatter: Sonderfall für `form-input` eingebaut, dass nummerische Werte aus einem Skript ins deutsche konvertiert werden
+- Formatter: Dokumentation ergänzt
+- Formatter: Der Formatter formatiert jetzt schon bei initalisieren
+- Formatter: Bei Block formatierung hat der Formatter bei einem Emtpy String einen Fehler geworfen
+- Form: Es gibt jetzt einen `data-unitaction` mit dem man der `data-unit` eine Aktion zuweisen kann (`call`, `mail`, `link`, `copy` oder `custom`) [#236]
+- Request API: Die Request API hat einen neuen Wert für das process Array. Hier kann man jetzt `n` angeben um eine deutsche Nummer zu konvertieren
+- Request API: Dokumenatation erweitert
+- SweetAlert: Dokumentation für `delete` und `save` erweitert
+
+### Version 1.0.20
+- Picklist: Neue Formatter Funktion `array` zum einfachen übersetzen von Zahlen zu Werten
+- Picklist: Neuer Parameter für Config `default` der angezeigt wird, kein Wert vorhanden ist
+- Picklist: Dokumentation der Filter erweitert
+- Gulp: Gulp Uglify durch Gulp Terser ersetzt, ohne Erfolg, siehe Ticket [#244]
+- Picklist: Modal kann jetzt bei Open einen Callback hinterlegt bekommen
+- Request API: Die Request API übernimmt jetzt automatisch den Task, damit man in der Handle `$req->task` nutzen kann statt `$_POST['task']`
+- Request API: Die get Funktion hat jetzt auch den Parameter `$allowEmpty`
+- Timeline: Die Timeline gibt den Content jetzt nicht mehr in beim Klick Event mit aus
+- Form: Range Slider in Unterschiedlichen Farben
+- App: `a` mit der Klasse `disabled` geben jetzt kein `onclick` mehr zurück und sind optisch auch deaktiviert
+- DataTables: Update gefixt [#228]
+- Select2: Fix für z-index Select2 [#226]
+
+### Version 1.0.19
+- 🚨 Die `config.json` wird jetzt nicht mehr nach Github hochgeladen. Das Repository ist zwar Privat, aber sicher ist sicher. [#81]
+- Picklist: Das `draw` Event wird jetzt auch in der Klasse getriggert
+- Form Handler: Es gibt jetzt die Klassen `form-hide-icon`, `form-hide-error-icon`, `form-hide-success-icon` die in die `form-group` eingefügt werden können.
+- Alert: `alert-soft-success` und `alert-soft-light`
+- Request: Es kann jetzt eine `$condition` bei den `delete` Funktionen mit übergeben werden. 
+- Request: Neue Funktion `updateByKeyValuePair` wenn ein Update mit mehreren Filtern versehen werden soll.
+- Snippet: Answer Snippet hinzufügt und altes gelöscht
+- Request: `\n`, `\r`, `\t` wurden doppelt escapte. Dies hat dazu geführt, dass in Textareas kein Zeilenumbruch angezeigt wurde
+- Statt `throw "Error"` wird jetzt in allen Funktionen `throw new Error("Error")` verwendet. [#218]
+- Es gibt jetzt eine "Fehlende Berechtigungs"-Seite [#85]
+- Form: Input File ist jetzt gestylt [#42]
+- Form: Select und Select Multi sind jetzt (soweit möglich) in Grün gestylt
+- .htaccess Datei angepasst und diveres Ordner in die ausgeschlossen
+- .htaccess Dokumentation erweitert
+
+### Version 1.0.18
+- Form Handler/Summernote: Validierung wird jetzt mit `data-fv-notempty` automatisch eingefügt
+- Form Handler/Summernote: Reset funktioniert jetzt ebenfalls 
+- Form Handler: Autocomplete Tetumgebung gebaut. Noch keine befriedigende Lösung gefunden!
+- Picklist: Bei AutoDeselect werden die Kästchen jetzt anders dargestellt [#214]
+- Picklist: Es gibt jetzt die Möglichkeit Disabled Werte mitzugeben [#215]
+- Picklist: Disabled kann jetzt auch mit einfachen Mitteln über eine Query gefüttert werden
+- Font Awesome: Alle Klassen `fas` durch `fa-solid` und `far` durch `fa-regular` ersetzt (Font Awesome 6)
+- Activation Checkbox: Neue Funktion `appendParent` hinzugefügt um Verschachtelung zu ermöglichen
+- Activation Checkbox: Funktion `appendParent` wieder entfernt. Alternativen Weg zum Verschachteln von Elementen, es kann jetzt `child` option mitgegbene werden.
+- Activation Checkbox: `child` kann jetzt ein Array sein.
+- Activation Checkbox: `child` Array kann jetzt auch Objekte beinhalten, mit denen man nachträglich eine Action ausführen kann
+- Neue Klasse `DragAndDrop` erstellt.
+- Request: Neue Funktion `moveUploadedFile` und `moveUploadedFiles` zum verschieben von hochgeladenen Dateien
+- Request: Neue Funktion `uploadResultToDatabase` zum einfügen der Dateien in die Datenbank
+- DragAndDrop: Kann jetzt auch das Änderungsdatum übernehmen
+- DragAndDrop: Zeigt jetzt beim Upload einen Status in Prozent an
+- DragAndDrop: Demo Umgebung gebaut
+- Formatter: Neue Formatter `bytes` erstellt. Errechnet aus Bytes eine sinnvolle MB, KB .. Zahl
+- Picklist: Neuen Formatter `bytes` integiert.
+- Neue Klasse `Galerie` erstellt
+- Activation: Das Callback Event hat jetzt einen zusätzlichen Parameter `hasChange`
+- Activation: Bugfix im Constructor
+- PickFilter: Dokumentation angepasst
+- Request API: Die Funktionen `answer` und `echoAnswer` akzeptieren jetzt als Parameter ein Array, dass dann automatisch mit der Funktion `adapt` übernommen wird
+- Activation Card: Hat jetzt ebenfalls die Funktion `getValue`
+- Form Handler: Neue Funktion `getDataField`
+- Action Item: `z-index` angepasst
+- Picklist: Hat eine neue Funktion `setReadonly` mit der man Auswahl-Tabellen schreibgeschützt machen kann
+- Picklist: Hat eine neue Funktion `getRowCount` mit der man die Anzahl der Reihen auslesen kann
+- Picklist: Beispiel zum Verknüpfen einer Picklist mit einer Form und Validierung erstellt
+
+
+### Version 1.0.17
+- Picklist: Neue Funktion `unFormatColumn` die Spalten für die Suche wieder rückgänig machen soll [#133]
+- Picklist: Beträge können jetzt schon Rückwärts gesucht werden [#133]
+- Picklist: Wenn in der Config beim Feldname kein Titel mitgegeben wurde, wird dieser jetzt `Unbekannt` genannt statt `undefined`
+- Doku: Dokumentation zum [Aktualisieren der Komponenten](docs/komponenten-aktualisieren.md) der Entwicklungsumgebung
+- Form Creator: Neue Klasse `FormCreator` angelegt zum Dynamischen Erstellen von Form Elementen
+- Form Creator: Dokumentation zum Form Creator angelegt. 
+- Form Creator: Einen Mockup-Builder gebaut, mit dem man sich jedes Input Feld als Code ausgeben lassen kann
+- Form Handler: Beispiel einer Form mit dynamischen Form Handler angelegt.
+- Form Handler: Hotkeys bei Date Objekt + und - füllen jetzt auch bei leerem Feld [#202]
+- Form Handler: Hotkeys bei Date/Time wird jetzt mit `shift` und `+/-` Monats bzw. Stundenweiße hochgezählt
+- CbConnect: Diese Klasse bringt jetzt eine DEPRECATED Warnung, stattdessen sollte ActionCheckbox genutzt werden
+- Activation: Neue Funktion `setChecked`, setzt die Checkbox auf den gewünschten Wert
+- Activation: Callback überträgt jetzt, ob das Event von der Form kam oder vom Benutzer
+- Activation: Bei `setChecked` kann man jetzt einstellen, ob man mit oder ohne Action agieren kann
+- Request: Bei `checkDuplicates` wird jetzt auch Success gefüllt
+- Quickselect/Form Handler: Fehler bei der Anzeige von Multi Select (Grüne Linie) [#210]
+- Quickselect: Es gibt jetzt eine neue Option `closeOnSelect`
+- Form Handler: Kann jetzt auch mit Multi Quickselect umgehen
+- Form Handler: Beispiele in der Übersicht an Multi Quickselect angepasst
+- Quickselect: Reset hat bei Multi Quickselect nicht funktioniert
+- Form Handler: Set Data hat bei Multi Quickselect nicht funktioniert
+- SweetAlert: Anpassung der Margin, damit die Button bei Notify ordentlich sind
+- Timeline: wird jetzt in einem Modal auch in Grau angezeigt
+- Form Handler: Summernote wird jetzt immer erkannt
+- Summernote: Dokumentation zur Form erweitert
+- Summernote: Layout, vorallem `border-radius` überarbeitet und an aktuellen Style angepasst [#212]
+- Summernote: Darstellung der Validierung überarbeitet
+- Form Handler: Funktioniert jetzt auch mit `input[type=search]`
+- Timeline: Bugfix wenn im JSON eine `'` enthalten war
+- Timeline: Komplett überarbeitet von der Positionierung
+- Timeline: Es gibt jetzt `precontent` und `subcontent`
+- Select2/Quickselect: Kann bei Multi jetzt in Blocks dargestellt werden
+- Select2/Quickselect: `form-floating` konnte nicht benutzt werden.
+
+### Version 1.0.16
+- Form Handler: Buttons in die Beispiele mit aufgenommen
+- Neue CMD Command `prepare` um mit der Entwicklung zu beginnen
+- App: Neue Funktion `getLoaderSvg` zum benutzen als HTML
+- Snippets: Simple Request angepasst
+- Cards: Es gibt jetzt Cards in den verschiendene Farben [#187]
+- Picklist: Bugfix `selection` und `selected` wurden nicht mehr ausgeführt
+- Quickselect: Man kann jetzt über `setFilter` eine eigene Message angeben
+- Card Activation: Bugfix hat immer nur das erste Element einer Klasse ein- und ausgeblendet
+- Card Activation: Wenn eine Pickliste integriert ist, dann wird bei der Default Action das Resize Event getriggert
+- Card: Padding für Action Items bei Sub-Card angepasst [#194]
+- 🚨 [Quality of Code](docs/quality-of-code.md): Dokumentation erweitert. Umgang mit großen JavaScript Objekten
+- Unnötige Logs aus JavaScript entfernt
+- App: Neue Funktion `getAndCheckUrlId`. Liest die URL ID aus und bringt einen Fehler, wenn die ID nicht gelesen werden kann
+- Picklist: Neues Event `dtInitComplete` das nur einmal gefeuert wird
+- Picklist: Bugfix `getColumnIndex` hat einen Fehler geworfen
+- Form Handler: Neue Funktion `find` vereinfacht das suchen und finden von Elementen
+- Picklist: Neues Event `reset-filter` erstellt.
+- Activation Card: Bugfix wenn bei `data-values` eine Zahl übergeben wurde, dann hat `split` nicht funktioniert 
+- Request API: Bugfix `adapt` bzw. `adaptObject` übernimmt jetzt auch die Daten aus `result`
+- Gulp: Bufix `datatables-plugin` hat die `de_de.json` in `de-DE.json` umbenannt
+- Picklist: Link in Tabelle wird bei Selected noch Blau angezeigt [#197]
+- Navbar: Dokumetation angepasst [#195]
+- Snippets: Navbar Snippet die `.fade` Klasse entfernt und einen `<br>` hinzugefügt
+- App: Neue Tastenkombinationen `strg` + `backspace` = Löscht jetzt Datums- und Zeitfelder vollständig [#190]
+- App: Neue Tastenkombinationen `strg` + `enft` = Löscht alle Input Felder vollständig [#190]
+- Picklist: Bugfix, Filter mit dem Namen statt dem Key führt zu einer undefined ansicht [#188]
+- Picklist: Bugfix, Wenn eine Pickliste in einem Tab ist, dann passt die Breite nicht [#198]
+
+
+### Version 1.0.15
+- 🚨 ACHTUNG: Die Request API führt auf Text (`t`) jetzt automatisch einen `trim` durch [#184]
+- Update to Font Awesome 6.0.0
+- Request: Bei Dubletten-Prüfung wird jetzt nur noch geprüft, wenn auch ein Wert vorhanden ist
+- Neues Dokument erstellt [Quality of Code](docs/quality-of-code.md)
+- In allen Dateien autocomplete='off' durch autocomplete="off" ersetzt (Siehe [Quality of Code](docs/quality-of-code.md))
+- Form Handler: Neue Funktion `inValidationList` zum prüfen ob ein Feld grundsätzlich validiert wird
+- Activation Checkbox: Bugfix - enable und disable Validator prüft jetzt ob das Feld überhaupt bei FormValidation vorhanden ist
+- Snippets: Select2 `bitte wählen` zu `Bitte wählen` angepasst, damit es mit programmierung übereinstimmt.
+- Snippets: `simpleRequest` ist jetzt ohne Error Callback und bei Success ist gleich eine Unnamed Funktion hinterlegt.
+- Activation: Eigene `Activation` Klasse angelegt
+- Activation: `ActivationCheckbox` Klasse umgebaut, sodass diese eine Erweiterung der `Activation` Klasse ist
+- Activation: `ActivationMulti` Klasse programmiert
+
+### Version 1.0.14
+- Request: Neue Funktion `getByKey` und `getMultiByKey`
+- Form Handler: Bei `hasChange` kann als Parameter ein Array mit Feldern übergeben werden
+- Request: Neue Funktion `updateByKey`
+- Form Handler: Vorerst die Loader entfernt siehe [#177]
+- Picklist: Modal Loader hat immer 4 Sekunden gewartet. Wartet jetzt nur noch 100ms bis zu einem Retry
+- Form Handler: Hintergrund-Farbe für Inputs ist jetzt immer weiß. [#178]
+- Form Handler: Neue Klasse `.form-gray` hinzugefügt [#178]
+- Form Handler: Nur bei Modal `loadAndOpen` wird jetzt ein Loader angezeigt [#177]
+- Request: Neue Funktion `checkRequired`, kann prüfen ob Keys gesetzt sind
+- Picklist: `editCustomColumn` wird jetzt vor dem Formatiern ausgeführt
+- Picklist: Es gibt jetzt eine neue Funktion namens `editCustomColumnAfter` die danach ausgeführt wird
+- Snippet für PHP Funktion
+- Request: Bugfix `checkRequired` hat nicht richtig funktioniert
+- Picklist: Neue Funktion für Multi Picklist `autoDeselect` ist standardmäßig aktiv [#160]
+- Picklist: Es ist jetzt möglich in `multi-picklist` mit `STRG` mehrere Daten an/abzuwählen je nach Modus [#161]
+- Picklist: Es ist jetzt möglich in `multi-picklist` mit `SHIFT` mehere Zeilen zu markieren [#161]
+
+### Version 1.0.13
+- Form Handler: Textarea Readonly ist jetzt nicht mehr anklickbar [#172]
+- Request: Bei Update gibt es jetzt die Möglichkeit zu prüfen, die Anzahl der Zeilen zu prüfen [#170]
+- Request: Es gibt jetzt eine neue Funtion namens `updateById` [#170]
+- Picklist: Neue Funktion `getColumnIndex` die mit Hilfe des Namens den Index zurückgibt [#168]
+- Picklist: `getSelectedColumn` und `getSingleSelectedColumn` können jetzt auch mit Namen angesteuert werden [#168]
+- Navigation: Der Effekt des ein- und ausblendens der Navigation wurde erheblich minimiert, da die Animation erst im Nachgang eingeschaltet werden [#174]
+- Navigation: Die Navigation speichert jetzt Ihre letzte Position im localStorage [#167]
+
+### Version 1.0.12
+- Picklist: Verbesserte Fehlermeldung in der Console
+- Picklist: Möglichkeit Klassen einzufügen
+- Picklist: Die Klasse `highlight` definiert
+- Picklist: Die Funktion `colVisible` akzeptiert jetzt auch den Feldnamen und nicht nur den Index
+- Form Handler: `setReadonly` funktioniert setzt jetzt nur noch Elemente der eigenen und nicht mehr der SubForm
+- SweetAlert: Scrollbar wurde ausgeblendet bei SweetAlert. Das hat zu verschiebungen geführt bei Picklist
+- Quickselect: Hat einen Fehler bei `abort` geworfen. Dies wird jetzt unterdrückt
+- Picklist: Bugfix Tooltip wird jetzt richtig angezeigt [#163]
+- Picklist: Bugfix `pageLength` wird jetzt mit ins Menü übernommen [#154]
+- Picklist: `lengthMenu` kann jetzt direkt mit übergeben werden.
+- Picklist: Es gibt jetzt eine Funktion namens `hasChange` die die aktuellen Daten mit den init Daten vergleicht [#169]
+- App: Neue Funktion `waitForPicklist` die einen Callback aussenden, wenn alle Picklists ready sind
+- NPM Updates
+- Form Handler: Bei Readonly wird jetzt der Hintergrund begrenzt [#162]
+- Request: Neue Funktion `deleteByKey` um anhand eines Key und Values Daten zu löschen!
+- Request: Neue Funktion `reset` und `resetQuery` um ein Insert rückgängig zu machen.
+- Form Handler: Neue Funktion `isSummernoteEl`
+- Form Handler: Summernote wird jetzt ebenfalls Readonly gesetzt [#171]
+
+### Version 1.0.11
+(Siehe [Update Guide 1.0.11](docs/updates/1.0.11.md))
+- 🚨 ACHTUNG: Die Klasse App wird jetzt nicht mehr über Orthor initalisiert, sondern muss initalisiert werden! (Siehe Update Guide)
+- Picklist: Bugfix Modal konnte nicht geschlossen werden
+- Picklist: Bugfix wenn es keinen Filter gibt, wurde eine Fehlermeldung ausgegeben
+- Form Handler: Neues Konzept für Form in einer Form (Sub-Form)
+- Picklist: Filter als Sub-Form angelegt
+- Picklist: Bugfix Filter bei mehrere Modals nicht funktionsfähig
+- Form Handler: Quickselect übergibt jetzt auch den Dropdown Parent
+- Timeline: Es gibt jetzt auch Sub-Content
+- Card: Card in Card angepasst, ist jetzt Hell und mit einem inset Shadow [#155]
+- Form Handler: Set Additional Data gibt jetzt die Daten mit aus
+- Form Handler: Es gibt jetzt ein eigenes Event für `setData`
+- Form Handler: Der Readonly Zustand wird jetzt in die Klasse abgespeichert `isReadonly`
+- Form Handler: Der Validation Zustand wird jetzt in die Klasse abgespeichert `hasValidation`
+- Form Handler: Neue Funktion `clearField` um ein einzelnes Feld zu leeren
+- Activation Card: Komplett überarbeitet [#156],[#139]
+- Activation Card: Blendet jetzt standardmäßig alles mit der Klasse `card-body-check` bzw. `-uncheck` ein und aus
+- Activation Card: Kann jetzt mit einer Form Verknüpft werden
+- Activation Card: Neue Unterseite erstellt
+- Form Handler: Set Additional Data wird jetzt auch bei Reset ausgeführt
+- Form Handler: Set Additional Data Dokumentiert
+- Form Handler: Es gibt jetzt eine Methode namens `renewInitFormData` die umbedingt nach `getAdditionalData` aufgerufen werden muss
+- Form Handler: Beispiele mit set und get Additional Data eingebaut
+- Form Handler: Bugfix Select Daten, die mit `null` bei `setData` übergeben werden werfen einen Fehler. Diese werden jetzt zu `false`
+- Request API: Bei `mergeForList` wird jetzt automatisch `false` gesetzt, falls die ID nicht vorhanden ist
+- Activation Card: Neuer Parameter für Checkbox `.card-activate-switch`. Alter funktioniert noch, bringt aber Deprecated Meldung
+- Activation Card: Findet jetzt immer die richtige Checkbox, auch bei verschachtelten Karten
+- Activation Card: Findet jetzt immer die richtige Divs, auch bei verschachtelten Karten
+- Form Handler: Betrachtet jetzt den Container statt die komplette Form für `getData` und `setData`
+- Form: Es gibt jetzt Farbige Switche
+- Activation Card: Dokumentation erweitert
+- Activation zusammengefasst und geplante Themen schon angefangen
+- Orthor Version wird jetzt auch angezeigt
+- Sidebar: Unnötiges Log behoben
+- Picklist: Neuer Event Listner `dt-resize` auf den gehört wird. Dieser kann überall verwendet werden, wenn sie ggf. die Größe eines Divs anpasst [#158]
+- Navigation: Die Navigation feuert jetzt dieses Event, wenn Sie ein- oder ausgeklappt wird
+- Picklist: Bugfix Trigger der `selection` bei `redraw()`. Das Event wird jetzt bei `redraw()` unterdrückt 
+- App: Die App speichert jetzt Tastendrücke `ctrl`, `alt`, `shift` unter `app.keys` 
+- Form Handler: `getSubmitButtons` berücksichtig jetzt Subforms
+- Form Handler: Felder die nicht dazu gehören werden jetzt bei `initValidation` auf `fvInstanz` entfernt
+- Picklist: Neue Funktion `colVisible` zum ein- und ausblenden von Spalten
+- Picklist: Hat jetzt ein `isReady` Option
+- Picklist: Hat jetzt eine `waitForReady` Funktion
+- Picklist: Neue Funktion `deselect`
+
+### Version 1.0.10
+- Request API: Hat `0` als Empty erkannt
+- App: Es gibt jetzt einen Wrapper Loader (Siehe unten bei Sweeralert)
+- Request API: Es gibt einen neuen Proxy dem eine URL mitgegeben werden kann die man abrufen möchte
+- Quickselect: Universalen Filter eingebaut. Kann jetzt sowohl über PHP als auch über JS benutzt werden
+- Quickselect: Beim Filter kann jetzt ein Array aus Key->Value Pairs oder direkt ein Key Value Paar mitgegeben werden in JS
+- Quickselect: Neue Funktion `$qs->addFilter($key, $value);` in PHP Klasse hinzugefügt
+- App: Datumfelder können mit `+` und `-` gesteuert werden
+- 404: Die Fehlerseite prüft jetzt ob es sich um eine `-handle.php` handelt und gibt dann nur eine Text-Fehlermeldung aus. [#150]
+- Card Sizer: Akzeptiert jetzt auch .alert Klasse
+- Form: Schreibfehler bei 404 behoben
+- Form: Fehlermeldung bei Load wenn zwar `success` aber keine Daten zurückgegeben wurden!
+- Card Sizer: Unnötiges Log entfernt
+- Formatter: el is not defined (Zeile: 16)
+- Picklist: Der Parameter `debug` führt jetzt ein ordentliches Log, dass farblich gekennzeichnet ist
+- Picklist: Es gibt einen neuen Parameter `config` mit dem man eine zweite Konfiguration einspielen kann
+- Picklist: Die Konfiguration wird jetzt ge- "deep-merged" mit `$.extend(true, {}, ...)`
+- Picklist: Diverse Verbesserungen bei Fehlermeldungen
+- Picklist: Klasse von `Dt` in `Picklist` umbenannt. `Dt` funktioniert aber auch weiterhin, sollte aber ausgetauscht werden!
+- Picklist: Neues Event `on('ajax')` wird ausgeführt sobald AJAX zurückgegeben wurde.
+- Picklist: Bugfix Tabellen mit nur einer Spalte haben eine Fehlermeldung verursacht.
+- SweetAlert: Neue Funktion `app.alert.debugError(title, message, debugInfo)`. Diese Funktion ist kein Mixin!
+- Picklist: Die Fehlermeldung wurde angepasst auf `debugError` angepasst.
+- Form-Handler: Die Fehlermeldung wurde angepasst auf `debugError` angepasst.
+- Quickselect: Die Fehlermeldung wurde angepasst auf `debugError` angepasst.
+- App: `simpleRequest` wurde angepasst auf `debugError` angepasst.
+- Breadcrumbs: Überflüssiges Leerzeichen entfernt
+- Picklist: Dokumentation verbessert und Beispiele hinzugefügt
+- gulp: Neue Methode deploy hinzugefügt. Diese löscht zusätzlich unnötige Dateien aus dem Dist Ordner
+- Die `update.cmd` benutze jetzt die neue Methode `deploy` von gulp.
+- Picklist: Filter der Spalten jetzt auch über die API möglich.
+- Picklist: Neue Funtion `resetFilter` um alle Spaltenfilter zurückzusetzen.
+- Picklist: Reset setzt jetzt auch Spaltenfilter zurück.
+- Picklist: Log-Funktion der API jetzt in der Response.
+- Picklist: Dokumentation weiter ausgebaut
+- Picklist: Neues Beispiel für Get Selected
+- Picklist: Option `order` eingebaut
+- Picklist: Komplette Überarbeitung der Suchlogik
+- Picklist: Doppelte Suchbegriffe werden jetzt eleminiert
+- Picklist: Neue Klasse zum erstellen von Filtern für die Pickliste `PickFilter` inkl. Dokumentation
+- Picklist: Neue Funktionen `setFilter`, `applyFilter`
+- Picklist: Suche und Suchfokus beim Reset optimiert
+- Picklist: Suche kann jetzt auch nach zusammenhängden Dingen suchen: `"Das ist ein Test"`
+- Picklist: Filter jetzt mit Semikolon statt mit Komma
+- Picklist: Filter GUI sowie Möglichkeiten für `text`, `betrag`, `yes-no`, `quickselect`
+- App: `parseGermanAmout` zeigt jetzt eine Deprecate Meldung
+- Picklist: Filter Icon leuchtet jetzt, wenn ein aktiver Filter gesetzt ist
+- Picklist: Filter wird jetzt als Text ausgegeben
+- Picklist: Diverse Filtermöglichkeiten auswählbar, `beginnt mit`, `enthält`, ...
+- Picklist: Filter SCSS Aussehen etwas angepasst
+- Quickselect: Aktzeptiert jetzt bei Reset auf einen Parameter `noTrigger` für den Reset
+- Picklist: Globale Suche auf UND Suche umgestellt. Mit einem Pipe `|` kann man auch Oder Suchen
+
+### Version 1.0.9
+- Card Sizer eingebaut [#146]
+
+### Version 1.0.8
+- Sidebar Klasse in JavaScript erstellt
+- Timeline: Kleinere Anpassungen an dem Style damit es in die Sidebar passt
+- Sidebar: Automatische ein- und ausblenden und Ajax Funktionen
+- Formatter: PHP von waehrung in betrag umbenannt
+- Formatter: Formatter und DataTables API kombiniert [#137]
+- Navigation Action Buttons: Überarbeitung und integration in die Klasse Notifications
+- Navigation Action Buttons: Haben jetzt eine JavaScript Klasse
+- Navigation Action Buttons: Kombination mit der Sidebar
+- Sidebar: Jetzt mit Action Button verknüpfbar
+- Sidebar: Neue Funktion `toggle` erstellt
+- Test-Dokumente umstrukturiert
+- Navigation etwas angepasst
+- Request API: Neue Funktion `checkDuplicateCombination` und `hasDuplicateCombination`
+- Request API: Zeile 314 die php Syntax eingefügt (. statt +)
+- Kontext-Menü eingeführt
+- Sidebar und Kontext-Menü haben jetzt Click auf `window` statt `body`
+- ToDos Konzept eingeführt
+- Request API: Bei `getQuery` und `getMultiQuery` gibt es jetzt einen `allowZero` Parameter
+- Card in Modal: Die Hintergrundfarbe ist jetzt dunkel damit beim hellen Hintergrund die Card hervorscheint 
+- Quickselect: Funktion `onlyId` bzw. `data-qs-only-id="true"` hinzugefügt
+- Quickselect: Debug jetzt über DataAttribute aufrufbar `data-qs-debug="true"`
+- Request API: Query Helper Funktion aufgetrennt als Vorbereitung für InsertMultiple
+- Request API: `InsertQuery`, `insertMultiple` und `insertMultipleQuery` hinzugefügt
+- Request API: Die `adapt` Funktion kann jetzt auch Objekte Adaptieren, nutzt dafür `adaptArray`, `adaptObject`
+- Datatables API: Nachkommastellen hatten ein Problem. Dies wurde jetzt behoben.
+- Formatter: Eine neue Klasse `.more-readable` hinzugefügt
+- Formatter: Formatiert jetzt auch Elemente die dynamisch eingefügt wurden!
+- Picklist: Neue Funktion zum auslesen der Selected Index `getSelectedIndex`
+- Version in der Navigation zeigt jetzt auf die Releasenotes
+
+### Version 1.0.7
+- Templates: Picklist Template hatte noch einen falschen Pfad zur Init
+- Picklist: Besser Fehlermeldung wenn bei der Config ein unbekanntes Feld vorhanden ist
+- Picklist: Einstellungen für Primary Key und Count optimiert
+- Picklist: Zeigt bei Format Date jetzt nichts mehr an (damit nicht 01.01.1970) da steht
+- Snippets: Form Switch war die Klasse in falschem Bereich
+- Picklist: Kann sich jetzt bei Laden des Tabs neu ausrichten per redraw - Funktion
+- Mobile: Grunsatzeinstellungen für Mobile Ansicht
+- Picklist: redraw - Funktion ist jetzt in default, damit es für alle Picklisten funktioniert
+- App: data-redirect="http" oder "_http" kann jetzt in jedes Element eingebettet werden (_ öffnet ein neues Tab)
+- Picklist: Die Ajax Daten werden jetzt nicht mehr statisch sondern über eine Funktion übergeben
+- Picklist: Einstellungen für Title werden jetzt richtig umgesetzt. Es gibt eine neue Einstellung namen `showTitle`
+- Request: Neue Funktion `deleteMultiple` und `deleteQuery` hinzugefügt
+- Picklist: Verbesserungen beim Keyboard-Handling wenn die Suche nicht aktiv ist
+- Picklist: `Cell` wird jetzt bei dem Key Event mit übergeben
+- Text: Neue Klasse namens `.inline-icon` gibt dem Icon eine mindest-breite und zentriert es.
+- Formatter: Formatter um `block` und `trim` erweitert [#136]
+- Form-Handler: Keine Extra Konfiguration für prop('disabled') für Select2 nötigt. Deprecated fixed [#138]
+
+### Version 1.0.6
+- Picklist: Wenn das `lengthMenu` ausgeblendet wird, dann wird die `pageLength` auf `100000000000` gesetzt
+- Picklist: `dataTables__top` wird jetzt nur noch angezeigt, wenn Sie auch Inhalt hat
+- Picklist: Bei der Pickliste kann jetzt auch ein `data` Objekt oder eine Funktion übergeben werden
+- Picklist: Fixed Where Funktion eingebaut
+- Picklist: Die Select und Deselect Klassen sind jetzt auch Global zum ein- und ausblenden verfügbar
+- Picklist: Dokumentation erweitert
+- Picklist: Fehler beim Formatieren der Währung beim Betrag behoben
+- Picklist: Währungsformatierung angepasst (Auch Parameter). Kann jetzt nicht mehr gerundet werden!
+- Picklist: Neue Formatierung eingefügt Number
+- Picklist: Komplette Überarbeitung der API. Arbeitet jetzt mit Alias
+- Formatter: Bugfix wenn an die Währung eine Number übergeben wird
+- Formatter: Neue Funktion zum Kopieren von Werte zu JS
+- Formatter: Neue Funktion zum Ausgeben von Nachkommastellen
+- Formatter: Währung rechnet jetzt mit neuen Funktionen
+- Formatter: Bei konvertierung wird jetzt auch getrimt
+- Formatter: Prüft jetzt beim Konvertieren auf String oder Number
+- Gulp: Fix Bug, Scripte von Aule wurden nicht neu geladen
+- Request: Verbessertes Debugging bei Query abfragen
+- Form Handler: Bugfix LoadAndOpen wurden beim Callback keine Daten übergeben!
+- Formatter: formatElement aktzeptiert jetzt einen zweiten Parameter
+- Formatter: Neue Funktion für formatElements
+- Picklist: getSelectedSingle gibt bei Single und Multi jetzt immer das komplette Objekt zurück
+- Picklist: Schreibfehler bei einer Funktion behoben.
+- Picklist: getSelectedSingleColumn Funktion hinzugefügt.
+- Gulp: copyScripts in eine try ... catch gepackt um zu verhindern, dass Browser Sync bei einem Syntaxfehler abstürzt
+- Snippets: Hotkey Snippet hinzugefügt
+- Picklist: Es wurde kein Submit Button ausgewählt Warnung wird unterdrückt!
+- Gulp: Maps-Dateien werden jetzt mitkopiert, damit keine Warnmeldung mehr in der Console auftaucht!
+- Request: Neue Adapt Funktion zum übernehmen der Werte aus einer API
+- Form Handler: Bei der Load Function gibt es jetzt auch einen Error Callback
+- Formatter PHP: Formatter Klasse für PHP gebaut
+- Snipptes: Input Switch Snippet angepasst
+- Settings wurden hinzugefügt
+- Form Handler: Bugfix Modal Load hatte noch die alte format Funktion
+
+### Version 1.0.5
+- Bugfix durch Bootstrap Update war Tabelle bei Hover schwarz
+- Fehlermeldung Request API, bei falschem Feldkonverter kommt jetzt eine bessere Fehlermeldung
+- Update NPM
+- Bugfix wenn Select 2 nicht in einer Form angegeben war, hat es nicht mehr funktioniert!
+- Picklist .val() Funktion hinzugefügt
+- Request API jetzt mit Answer Funktion
+- Kleiner Fehler bei Select 2 behoben
+- Standard Tabelle Layout angepasst
+- Tabs gestylt und als Snippet hinterlegt (unter Navigation)
+- FAB Buttons mit Text
+- Bootstrap Alerts Style überarbeitet `.alert .alert-xxx`
+- Snippets verbessert im Bereich Tabs
+- Bug in Pickliste behoben. Bei Modal wurde bei Pick die Werte zurückgesetzt, bevor das Event angesteuert wurde
+- Request API `delete` hinzugefügt
+- Snippets Radio Inline verbessert
+- Google Phone Number Validation eingefügt
+- Neue Klasse `formatter` eingefügt
+
+### Version 1.0.4
+(Siehe [Update Guide 1.0.4](docs/updates/1.0.4.md))
+- 🚨 ACHTUNG: Funktionen `hasDuplicate` und `setData` und `sanitize` aus App in eigene API namens Request umgezogen.
+- Request API prüft jetzt bei Text ob ein Array übergeben wurde und schmeißt eine Exception.
+- Request API gibt jetzt bei der Exception den Feldnamen aus, bei dem der Fehler aufgetreten ist.
+- Request API Variablen Name Result angepasst
+- Orthor Gulp überwacht API doppelt [#118](https://github.com/BurosystemhausSchafer/orthor/issues/118)
+- Orthor Gulp überwacht nicht den assets Ordner [#118](https://github.com/BurosystemhausSchafer/orthor/issues/118)
+- Scrollbar wird jetzt auch bei Firefox ausgeblendet [#120](https://github.com/BurosystemhausSchafer/orthor/issues/120)
+- FormHandler - Bugfix beim Reset to Date wird erneut Validiert!
+- App - getUrlId Feature
+- Request API es gibt jetzt einen getQuery Befehl
+- Request API - Neue Funktion mergeForList
+- Form Handler - Form Load hat keine Daten übergeben
+- Form Handler - Reset, SetData überarbeit zwecks Revalidierung
+- Form Handler - Fixed Bug bei Card wurde bei Fehler das Icon wieder auf "edit" gesetzt
+- Form Handler - Select2 und Pickliste Aussehen bei Readonly angepasst [#122](https://github.com/BurosystemhausSchafer/orthor/issues/122)
+- Request API - Neue Funktion `getMultiQuery`
+- Form Handler - `number` wurde bei setData noch nicht unterstützt!
+- Picklist API - Zeigt bei anderer Tabelle falschen Wert an
+- Picklist API - Joins aktzeptiert in der Config jetzt auch ein Array, das macht es übersichtlicher
+- Schriftarten angepasst - Open Sans komplett Neu eingebunden in 300-800
+- Checkbox Connect Klasse hinzugefügt
+- Unnötige Logs entfernt
+- Form Handler - `discard` Event hinzugefügt
+- Checkbox Connect - Validierung erweitert
+- Request API - Bei Checkbox wird jetzt die Form- und die Benutzer Variante aktzeptiert
+- Request API - Führt jetzt ein Log durch
+- Form Handler - Bugfix "0" wurde bei Checkbox nicht als false erkannt!
+- Chart JS - Plugin DataLabels hinzugefügt
+- Simple Request jetzt in Snippets
+- Request API - `getSelectValue` analog zu Checkbox hinzugefügt
+- Form Handler hat jetzt die Möglichkeit Units hinzuzufügen [#127](https://github.com/BurosystemhausSchafer/orthor/issues/127)
+- Form Handler kann jetzt Beträge automatisch formatieren [#126](https://github.com/BurosystemhausSchafer/orthor/issues/127)
+- Favicon hinzugefügt [#124](https://github.com/BurosystemhausSchafer/orthor/issues/124)
+
+### Version 1.0.3
+- PHP_SELF statt REQUEST_URI, damit Pagelevel Skripte auch bei $_GET Variablen funktionieren (?id=xxx)
+- `editable` Klasse in die Form Snippets hinzugefügt
+- Snippets für Alert und Notfiy angepasst (Auswahl ob Success, Error, etc.)
+- Form Handler - Neue Funktion load (bei allen) und loadAndOpen (nur bei Modals)
+- Quickselect und Select 2 jetzt auf Deutsch [#99](https://github.com/BurosystemhausSchafer/orthor/issues/99)
+- Quickselect zeigt jetzt eine Fehlermeldung, wenn das AJAX Script einen Fehler wirft
+- Quickselect kann jetzt mit `.on` angesprochen werden
+- Quickselect & FormHandler sind jetzt kombinierbar. FormHandler initalisiert automatisch Quickselect
+- Quickselect Bug für Default Value behoben
+- Quickselect in Modal funktioniert jetzt ordentlich
+- Picklist Neue Funktion `getSelectedSingle` zum normalisieren von Single und Mutli Picklisten
+- Picklist Neue Funktion `getSelectedLength` für das Auswerten der Anzahl an ausgewählten Reihen
+- Picklist Neue Funktion `getSelectedColumn` um eine Liste eines Spaltenwerts aller ausgewählten Zeilen zu erhalten
+- Snippet hinzugefügt für Standard AJAX Antwort
+- Input Type `number` wird jetzt vom Form-Handler auch ausgelesen
+- `.form-floating-check` hat jetzt kein margin-bottom mehr
+- Update Composer / NPM
+- Quickselect Added Feature Filter [#112](https://github.com/BurosystemhausSchafer/orthor/issues/112)
+- Quickselect - Bugfix Suche nach leerem Ergebnis, wenn Leerzeichen am Ende
+- Quickselect - Bugfix Identische Suchbegriffe werden ignoriert
+- Quickselect - Bugfix wird jetzt bei Multiple automatisch größer [#109](https://github.com/BurosystemhausSchafer/orthor/issues/109)
+
+### Version 1.0.2
+- Snippet für Icon hinzugefügt
+- Snippet für Button Link hinzugefügt
+- Snippet für Code hinzugefügt
+- Dokumentation der Pickliste angepasst
+- Fixed Picklist Add Buttons werden nicht angezeigt
+- Picklist - AddHandleButtons Funktion hinzugefügt
+- Picklist - InitComplete Event hinzugefügt
+- Picklist - SubmitButton kann jetzt ein- oder ausgeblendet werden (nur Modal)
+- Form Modal - Select2 Dropdown nicht sichtbar
+- Snippet für Select und Select 2 verbessert
+- Snippet für Input jetzt mit Form-Group
+- App API - Sanitize
+- App API - Set DB Data
+- Form Handle - Loader wurde beim Callback nicht automatisch geschlossen
+- App API - Has Duplicates Funktion
+- Snippet Card Title hinzugefügt
+- Snippet Hochkomma bei HTML immer " statt '
+- Simple Ajax Request in die App.js eingebaut
+- Form Handler - save Funktion überarbeitet und der Simple Ajax Request angeglichen Siehe [Hier](http://localhost:3000/form-handler-doku.php#example-form-save)
+- Picklist - Refresh Funktion hat jetzt einen Parameter um Selected zurückzusetzen Siehe [#105](https://github.com/BurosystemhausSchafer/orthor/issues/105)
+- Form Handler - Bei Select2 wurde on Change nicht revalidated [#104](https://github.com/BurosystemhausSchafer/orthor/issues/104)
+- Form Handler - Der Pfeil passt jetzt auch bei FormValidation [#103](https://github.com/BurosystemhausSchafer/orthor/issues/104)
+- Picklist - Zeigt jetzt die Zahl in Deutsch an in der Info [#97](https://github.com/BurosystemhausSchafer/orthor/issues/97)
+- Git Hooks überarbeit [#106](https://github.com/BurosystemhausSchafer/orthor/pull/106) @devcfernandez
+- Select2 - Bug mit Search Fokus und jQuery 3.6.0 durch Workaround behoben [#101](https://github.com/BurosystemhausSchafer/orthor/issues/101) [Select2 #5993](https://github.com/select2/select2/issues/5993)
+
+### Version 1.0.1
+(Siehe [Update Guide 1.0.1](docs/updates/1.0.1.md))
+- [#29](https://github.com/BurosystemhausSchafer/orthor/issues/29) Sweet Alert Button mit Space
+- Fixed .htaccess 404 Error Page wird nicht angezeigt
+- Fixed Login
+- Fixed DataTables Config wurde über falschen Pfad geladen
+- Orthor Ordner wird nicht mehr von Gulp überwacht (Performance dadurch deutlich besser beim Start)
+- `$_root` ist jetzt automatisch `$_SERVER['DOCUMENT_ROOT']`, wenn dies nicht definiert wurde
+- DataTable API grieft jetzt auf die $_root Variable zu und funktioniert damit auch in Untersystemen
+- DataTable API gibt jetzt einen besseren Fehler zurück, wenn die Query fehlschlägt!
+- FAB, Single, Switch, Rotate in Snippets aufgenommen
+- Neue Funktion namens `app.redirect` als abkürzung für `window.location.href = `. Aktiviert außerdem automatisch den Loader. 
+- Fix PageLevel funktioniert nicht wenn man ohne .php die Seite aufruft. (Siehe .htacess)
+- Es gibt jetzt ein Snippet für PHP Klassen
+- Activation Card hinzugefügt (@yusufgoerduek)
+- FullCalendar Card hinzugefügt (@yusufgoerduek)
+- Dokumentation ausgebaut (@yusufgoerduek)
+- Navigation auf ohne .php umgestellt (@yusufgoerduek)
+
+### Version 1.0.0
+(Siehe [Update Guide 1.0.0](docs/updates/1.0.0.md))
+
+- Komplette Überarbeitung der Dokumentation
+- Anpassung auf Sub-Domain-Entwicklung (Siehe [Repository Hinzufügen](docs/entwicklung-repository.md))
+- .htaccess Datei muss zwigend angelegt werden
+- Diverse Anpassungen an Gulp-File

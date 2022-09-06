@@ -1,0 +1,142 @@
+// Standard Rahmen ausblenden
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+  border: none;
+}
+
+//Schriftgröße des Inhalts
+.table {
+  font-size: 13px;
+  width: 100%;
+}
+
+// Tabellen Höhe definieren
+.table > :not(caption) > * > * {
+  padding: 0.4rem 0.4rem;
+}
+
+// Überschriften nicht Fett darstellen
+.table > thead > tr > th,
+.table > tfoot > tr > th {
+  font-weight: normal;
+}
+
+tbody tr {
+  background-color: $white;
+}
+
+// Einstellungen für die komplette Reihe
+table.table tbody > tr {
+  // Für Even
+  &.even {
+    td,
+    th {
+      &.highlight {
+        background: $gray-200;
+        border-left: 1px solid $gray-300;
+        border-right: 1px solid $gray-300;
+      }
+    }
+
+    &:hover {
+      background-color: rgba($primary, 0.1);
+    }
+
+    &.selected,
+    > .selected {
+      color: white;
+      background-color: $gray-700;
+
+      td,
+      th {
+        &.highlight {
+          background: $gray-500;
+          border-left: 1px solid $gray-400;
+          border-right: 1px solid $gray-400;
+        }
+      }
+    }
+  }
+
+  // Für Odd
+  &.odd {
+    td,
+    th {
+      &.highlight {
+        background: $gray-100;
+        border-left: 1px solid $gray-200;
+        border-right: 1px solid $gray-200;
+      }
+    }
+
+    background-color: #fafafa;
+
+    &:hover {
+      background-color: rgba($primary, 0.2);
+    }
+
+    // Wenn es ausgwählte sind
+    &.selected,
+    > .selected {
+      background-color: $gray-800;
+
+      td,
+      th {
+        &.highlight {
+          background: $gray-600;
+          border-left: 1px solid $gray-500;
+          border-right: 1px solid $gray-500;
+        }
+      }
+    }
+  }
+
+  &.readonly {
+    opacity: 0.8;
+  }
+
+  &.disabled {
+    opacity: 0.4;
+  }
+}
+
+table.table thead > tr {
+  td,
+  th {
+    &.highlight {
+      background: $gray-100;
+      border: 1px solid $gray-200;
+    }
+  }
+}
+
+.table-hover > tbody > tr:hover > * {
+  color: inherit;
+}
+
+// Tabellen mit Rahmen
+.table-bordered,
+.table-bordered td,
+.table-bordered th {
+  border: 1px solid $gray-100;
+}
+
+// Bei einer Hover Tabelle den Maus-Cursor anpassen
+.table.table-hover {
+  cursor: pointer;
+}
+
+//Jede zweite Zeile verdunkelt
+.striped tbody tr:nth-child(odd) {
+  background-color: #f8f8f8;
+}
+
+table.dataTable tbody tr.selected a,
+table.dataTable tbody th.selected a,
+table.dataTable tbody td.selected a {
+  color: $primary;
+}

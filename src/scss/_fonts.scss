@@ -1,0 +1,64 @@
+/* open-sans-300 - latin */
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 300;
+    src: local(""), url("../webfonts/open-sans-latin-300-normal.woff2") format("woff2"),
+            url("../webfonts/open-sans-latin-300-normal.woff") format("woff"); 
+}
+/* open-sans-regular - latin */
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local(""), url("../webfonts/open-sans-latin-400-normal.woff2") format("woff2"),
+         url("../webfonts/open-sans-latin-400-normal.woff") format("woff"); 
+}
+
+/* open-sans-500 - latin */
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 500;
+    src: local(""), url("../webfonts/open-sans-latin-500-normal.woff2") format("woff2"),
+         url("../webfonts/open-sans-latin-500-normal.woff") format("woff"); 
+}
+
+/* open-sans-600 - latin */
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    src: local(""), url("../webfonts/open-sans-latin-600-normal.woff2") format("woff2"),
+         url("../webfonts/open-sans-latin-600-normal.woff") format("woff"); 
+}
+
+/* open-sans-700 - latin */
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: local(""), url("../webfonts/open-sans-latin-700-normal.woff2") format("woff2"),
+         url("../webfonts/open-sans-latin-700-normal.woff") format("woff"); 
+}
+/* open-sans-800 - latin */
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 800;
+    src: local(""), url("../webfonts/open-sans-latin-800-normal.woff2") format("woff2"),
+         url("../webfonts/open-sans-latin-800-normal.woff") format("woff"); 
+}
+
+// Summernote
+// *************************************************************************
+// aus Datei summernote/dist/font/*
+@font-face {
+    font-family: "summernote";
+    font-style: normal;
+    font-display: auto;
+    src: url("../webfonts/summernote.eot");
+    src: url("../webfonts/summernote.eot?#iefix") format("embedded-opentype"),
+        url("../webfonts/summernote.woff2") format("woff2"), url("../webfonts/summernote.woff") format("woff"),
+        url("../webfonts/summernote.ttf") format("truetype");
+}

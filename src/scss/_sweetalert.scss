@@ -1,0 +1,163 @@
+.swal2-title {
+    font-size: 1.35rem;
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-base;
+    color: $body-color;
+}
+
+.swal2-html-container {
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-base;
+    color: $body-color;
+    line-height: $line-height-base;
+    font-size: $font-size-base;
+}
+
+.swal2-popup.swal2-toast {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.swal2-popup.swal2-toast {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.swal2-popup.swal2-toast .swal2-title {
+    font-weight: 700;
+    margin: 8px;
+    margin-bottom: 0px;
+}
+
+.swal2-popup.swal2-toast .swal2-html-container {
+    margin: 8px;
+    margin-top: 0px;
+}
+
+.swal2-popup.swal2-toast .swal2-actions {
+    margin: 0px;
+    margin-top: 0px;
+    margin-bottom: 16px;
+}
+
+// Position
+body.swal2-toast-shown .swal2-container.swal2-top-end, body.swal2-toast-shown .swal2-container.swal2-top-right {
+    top: $navbar-height - 18px; 
+}
+
+.swal2-popup {
+    border-radius: $theme-border-size;
+}
+
+
+.bg-primary .swal2-icon.swal2-success,
+.bg-warning .swal2-icon.swal2-success,
+.bg-danger .swal2-icon.swal2-success,
+.bg-primary .swal2-icon.swal2-error,
+.bg-warning .swal2-icon.swal2-error,
+.bg-danger .swal2-icon.swal2-error,
+.bg-primary .swal2-icon.swal2-warning,
+.bg-warning .swal2-icon.swal2-warning,
+.bg-danger .swal2-icon.swal2-warning,
+.bg-primary .swal2-icon.swal2-info,
+.bg-warning .swal2-icon.swal2-info,
+.bg-danger .swal2-icon.swal2-info,
+.bg-primary .swal2-icon.swal2-question,
+.bg-warning .swal2-icon.swal2-question,
+.bg-danger .swal2-icon.swal2-question {
+    border-color: rgba(255,255,255,0.5);
+}
+
+
+
+// Success, Error, TODO: Warning, Question, Info
+.bg-primary .swal2-icon.swal2-success [class^=swal2-success-line],
+.bg-warning .swal2-icon.swal2-success [class^=swal2-success-line],
+.bg-danger .swal2-icon.swal2-success [class^=swal2-success-line],
+.bg-primary .swal2-icon.swal2-error [class^=swal2-x-mark-line],
+.bg-warning .swal2-icon.swal2-error [class^=swal2-x-mark-line],
+.bg-danger .swal2-icon.swal2-error [class^=swal2-x-mark-line] {
+    background-color: $white;
+}
+
+// Abstand zwischen zwei Button
+.swal2-shown .swal2-container .swal2-actions {
+
+    .swal2-confirm {
+        margin-right: 4px;
+    }
+
+    .swal2-deny {
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    .swal2-cancel {
+        margin-left: 4px;
+    }
+}
+
+
+
+
+// Swal Input Style
+.swal2-input.form-control {
+    height: 25px;
+    width: 85%;
+    box-shadow: inset 0 0px 0px rgb(0 0 0 / 6%), 0 0 0 3px transparent;
+}
+
+// Damit der Rahmen nicht erscheint
+.swal2-input:focus, .swal2-file:focus, .swal2-textarea:focus {
+    border: none;
+}
+
+.swal2-container .form-control:focus, .swal2-container .form-select:focus {
+    border-bottom: 1px solid #7ab929;
+}
+
+$swal-container-btn: 116px;
+
+.swal2-container .btn {
+    min-width: 111px;
+}
+
+
+.swal2-container .swal2-toast .btn {
+
+ // Sorgt dafür, dass es keinen Zeilenumbruch in den Buttons gibt
+ white-space: nowrap;
+}
+
+
+body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+    overflow: inherit;
+}
+
+
+
+
+/*
+
+
+//Damit das ganze Sweet Alert grün ist
+.swal2-container.swal2-top-end > .swal2-popup, .swal2-container.swal2-top-right > .swal2-popup {
+    background: $primary;
+}
+
+//Damit Title weiß ist
+.swal2-popup.swal2-toast .swal2-title, .swal2-popup.swal2-toast .swal2-html-container  {
+    color: #EBF5DF;
+}
+
+.swal2-icon.swal2-success [class^=swal2-success-line] {
+    background-color: #EBF5DF;
+}
+
+.swal2-icon.swal2-success .swal2-success-ring {
+    border: 0.25em solid #EBF5DF;   
+
+
+
+}
+
+*/

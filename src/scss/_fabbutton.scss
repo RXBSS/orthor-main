@@ -1,0 +1,82 @@
+.fab-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    bottom:30px;
+    right:30px;
+    position:fixed;
+}
+
+.fab-container .btn {
+    text-align: center;
+    padding: 0;
+    font-size: 1.2em;
+    margin-top: 1em;
+    border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.fab-container .btn-sm {
+    font-size: 0.909em;
+    border-radius: 15px;
+    height: 30px;
+    width: 30px;
+}
+
+.fab-children {
+    display:none;
+
+    // FAB Label
+    .fab-label {
+        color: $gray-900;
+        position: fixed;
+        padding: 2px 8px;
+        font-weight: bold;
+        border-radius: 2px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        display:none;
+        background: $white;
+    
+        right: 92px;
+        margin-top: -27px;
+
+        i {
+            color: $primary;
+        }
+    }
+    
+    &.btn-sm .fab-label {
+        right: 80px;
+        margin-top: -21px;
+    }
+
+    
+       
+}
+
+.fab-rotate i {
+    transition: transform .5s ease-in-out;
+}
+
+
+.fab-row {
+    flex-direction: row;
+    
+    .btn {
+        margin-left: 20px;
+    }
+
+}
+
+
+.fab-container .btn.fab-text {
+    width: auto;
+    padding-left: 25px;
+    
+    padding-right: 25px;
+    overflow: visible;
+}
+
+

@@ -1,0 +1,69 @@
+// Black an White
+$white:    #fff !default;
+$gray-100: #eee !default;
+$gray-200: #dedede !default;
+$gray-300: #d0d0d0 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #333333 !default;
+$gray-800: #222222 !default;
+$gray-900: #1C1C1C !default;
+$black:    #000 !default;
+
+// Colors in Bootstrap
+$blue:    #3498db !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #d63384 !default;
+$red:     #c0392b !default;
+$orange:  #e67e22 !default;
+$yellow:  #f39c12 !default;
+$green:   #7ab929 !default;
+$teal:    #20c997 !default;
+$cyan:    #1abc9c !default;
+
+// Primäre und Sekundäre Farbe
+$primary:       $green !default;
+$secondary:     $gray-800 !default;
+$dark:          $black !default;
+$info:          $blue !default;
+
+// Body
+$body-bg:                   $gray-100 !default;
+$body-color:                $gray-900 !default;
+
+// Border Radius
+$border-radius:               2px !default;
+$border-radius-sm:            2px !default;
+$border-radius-lg:            2px !default;
+$border-radius-pill:          2px !default;
+
+
+// Navbar
+$navbar-dark-color:                 $white;
+$navbar-dark-active-color:          $primary;
+$navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-dark-toggler-border-color:  rgba($white, .1);
+$navbar-nav-link-padding-x:         1rem;
+
+// Drop Dark
+$dropdown-dark-bg:                  $black;
+
+// Font Familiy
+$font-size-base:                    0.9rem;
+$line-height-base:                  1.5;
+$font-family-sans-serif:            'Open Sans', sans-serif;
+$headings-line-height:              1.4;
+
+// Card Padding
+$card-padding:                      1.5rem;
+
+$table-border-color:                #f8f8f8;
+
+// Link Farbe
+$link-color:                              $primary !default;
+$link-decoration:                         none !default;
+
+//Color Button light
+$button-light:                      #f6f6f6;

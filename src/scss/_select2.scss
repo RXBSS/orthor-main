@@ -1,0 +1,299 @@
+// Floating Form Only
+.form-floating .select2-container {
+    margin-top: 30px;
+}
+
+.form-floating .select2-selection {
+    margin-top: 2.5px;
+    &.select2-selection--single {
+        max-height: 27px;
+    }
+}
+
+.form-floating .select2-container .select2-selection--single .select2-selection__rendered {
+    padding-left: 3px;
+}
+
+.select2-container--default .select2-selection--single {
+    border-radius: 0;
+    border: 0;
+    background-color: transparent;
+    border-bottom: 1px solid $gray-300;
+    height: auto;
+}
+
+// Kleinen Pfeil bei Select2 ausblenden
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: -1px;
+}
+
+.fv-plugins-bootstrap5-row-valid .select2-container--default .select2-selection--single .select2-selection__arrow,
+.fv-plugins-bootstrap5-row-invalid .select2-container--default .select2-selection--single .select2-selection__arrow {
+    right: 11px;
+}
+
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple {
+    border: none;
+    padding: 0.1rem 0;
+    border-bottom: 1px solid $gray-300;
+    border-radius: 0px;
+    line-height: 1.5;
+    background: transparent;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding-left: 0px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 1.5;
+}
+
+.select2-selection {
+    margin-top: 0.5px;
+}
+
+// Disabled
+.select2-container--default.select2-container--disabled .select2-selection--single,
+.select2-container--default.select2-container--disabled .select2-selection--multiple {
+    background: repeating-linear-gradient(45deg, transparent, transparent 10px, #fcfcfc 10px, #fcfcfc 20px);
+}
+
+// Multiple
+.select2-container--default .select2-selection--multiple {
+    .select2-selection__choice {
+        border-radius: 2px;
+        border: 0;
+        background-color: $gray-100;
+        padding: 1px;
+        padding-left: 20px;
+        color: $gray-700;
+        margin: 0;
+        margin-top: 1px;
+        margin-right: $spacer * 0.5;
+    }
+
+    .select2-selection__choice__remove {
+        color: $gray-700;
+        margin-right: 0.5rem;
+
+        &:hover {
+            color: $gray-700;
+        }
+    }
+}
+
+.select2-container--default
+    .select2-selection--multiple
+    .select2-container--default
+    .select2-selection--multiple
+    .select2-selection__rendered {
+    padding: 0;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    border: 0;
+    border-bottom: 1px solid $gray-300;
+}
+
+.select2-container--default .selection {
+    position: relative;
+    display: block;
+}
+
+// Effekt für ausgewählen Container
+.select2-container--default .selection:before,
+.select2-container--default .selection:after {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    transition: all 200ms;
+    transition-timing-function: ease;
+    background-color: $primary;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .select2-container--default .selection:before,
+    .select2-container--default .selection:after {
+        transition: none;
+    }
+}
+
+.select2-container--default .selection:before {
+    left: 50%;
+}
+.select2-container--default .selection:after {
+    right: 50%;
+}
+
+.select2-container--open .selection:before,
+.select2-container--open .selection:after {
+    width: 50%;
+}
+
+.select2-dropdown {
+    background-color: $white;
+    border: 0;
+    margin-top: 1px;
+    border-radius: 2px;
+    padding: 0.8rem 0 0 0;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.11);
+    z-index: 500;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .select2-dropdown .select2-results__option {
+        transition: none;
+    }
+}
+
+/*
+
+.select2-dropdown .select2-results__option--highlighted[aria-selected] {
+    background-color: #f9f9f9;
+    color: #16181b;
+}
+
+.select2-dropdown .select2-results__option[aria-selected="true"] {
+    position: relative;
+    padding-right: 1.5rem;
+    background-color: #f9f9f9;
+    color: #16181b;
+}
+
+
+*/
+
+// Dropdown Suche
+.select2-dropdown .select2-search--dropdown {
+    margin-top: -0.5rem;
+    border-bottom: 1px solid #eceff1;
+    position: relative;
+    margin-bottom: 0;
+}
+
+// Lupe Such-Icon
+.select2-dropdown .select2-search--dropdown:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f002";
+    font-weight: 900;
+    font-size: 1rem;
+    color: $gray-500;
+    position: absolute;
+    left: 1rem;
+    top: 0.8rem;
+}
+
+// Input Field
+.select2-dropdown .select2-search--dropdown .select2-search__field {
+    border: 0;
+    background-color: transparent;
+    height: 2.8rem;
+    color: #495057;
+    padding-left: 2.6rem;
+
+    // Entfene Rahmen on Focus
+    &:focus {
+        border: 0;
+        outline: 0;
+    }
+}
+
+// Selected Icon
+
+/*
+.select2-dropdown .select2-results__option[aria-selected="true"]:before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f00c";
+    font-weight: 900;
+    position: absolute;
+    top: 0.5rem;
+    right: 1.5rem;
+    font-size: 1rem;
+    color: $gray-500;
+}
+*/
+
+.select2-dropdown .select2-results__option {
+    // Setze auf Relative
+    position: relative;
+}
+
+.select2-dropdown .select2-results__option {
+    padding: 0.65rem 1.5rem;
+    transition: background-color 300ms, color 300ms;
+
+    &:before {
+        font-family: "Font Awesome 5 Free";
+        content: "";
+        font-weight: 900;
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        font-size: 1rem;
+        color: $gray-500;
+    }
+
+    &.select2-results__option--selectable {
+        color: $gray-900;
+        background: $white;
+
+        &.select2-results__option--highlighted {
+            background: $gray-100;
+
+            &:before {
+                content: "\f00c";
+            }
+        }
+
+        &.select2-results__option--selected {
+            background: darken($gray-100, 2%);
+
+            &:before {
+                content: "\f560";
+            }
+        }
+
+        &.select2-results__option--selected.select2-results__option--highlighted {
+            background: darken($gray-100, 4%);
+
+            &:before {
+                content: "\f560";
+            }
+        }
+    }
+}
+
+// Select 2 mit ganzspaltiger Zeile
+.form-select2-multi-column .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    display: block;
+    margin-bottom: 3px;
+}
+
+
+.select2.select2-container.select2-container--default.select2-container--below {
+
+    .select2-search.select2-search--inline {
+        display: none;
+    }
+
+    &.select2-container--open, &.select2-container--focus {
+        .select2-search.select2-search--inline {
+            display: block;
+        }
+    }
+
+}
+
+

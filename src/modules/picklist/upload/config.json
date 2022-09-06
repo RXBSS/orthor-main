@@ -1,0 +1,38 @@
+{
+    "title": "<i class=\"fas fa-bahai\"></i> Beispiel Liste",
+    "table": {
+        "name": "example_upload"
+    },
+    "fields": {
+        "id": {
+            "title": "ID"
+        },
+        "name": {
+            "title": "Name"
+        },
+        "name_original": {
+            "title": "Original"
+        },
+        "pfad": {
+            "title": "Pfad"
+        },
+        "groesse": {
+            "title": "Größe",
+            "format": "bytes"
+        },
+        "dateiendung": {
+            "title": "Dateiendung"
+        },
+        "mime": {
+            "title": "MIME Type"
+        },
+        "datum_aenderung": {
+            "title": "MIME Type",
+            "format": "date"
+        },
+        "datum_upload": {
+            "title": "MIME Type",
+            "format": "date"
+        }
+    }
+}

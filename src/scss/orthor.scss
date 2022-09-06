@@ -1,0 +1,36 @@
+// Variablen die in Bootstrap existieren, die wir überschrieben
+@import "variables_bootstrap.scss";
+
+// Eigene Variablen die wir definieren
+@import "variables_orthor.scss";
+
+// Schriftart (Open Sans)
+// @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+// Import Bootstrap 5
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Import aus anderen SCSS Files
+@import "buttons.scss";
+@import "cards.scss";
+@import "fonts.scss";
+@import "forms.scss";
+@import "modals.scss";
+@import "navigation.scss";
+@import "scrollbar.scss";
+@import "sidebar.scss";
+@import "text.scss";
+@import "fabbutton.scss";
+@import "fullcalender.scss";
+@import "timeline.scss";
+@import "alert.scss";
+@import "upload.scss";
+@import "galerie.scss";
+
+// Third Party
+@import "sweetalert.scss";
+@import "select2.scss";
+@import "datatables.scss";
+@import "tables.scss";
+@import "summerNote.scss";
+@import "cytoscape.scss";

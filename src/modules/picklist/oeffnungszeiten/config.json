@@ -1,0 +1,33 @@
+{
+    "title": "<i class=\"fas fa-clock\"></i> Öffnungszeiten",
+
+
+    "table": {
+        "name": "example_oeffnungszeiten"
+    },
+
+    "fields": {
+        "id": {
+            "title": "ID"
+        },
+        "tag": {
+            "title": "Tag"
+        },
+        "offen": {
+            "title": "Offen"
+        },
+        "von1": {
+            "title": "Von1"
+        },
+        "bis1": {
+            "title": "Bis1"
+        },
+        "von2": {
+            "title": "Von2"
+        },
+        "bis2": {
+            "title": "Bis2"
+        }
+    }
+
+}

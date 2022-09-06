@@ -1,0 +1,9 @@
+.cytoscape {
+    background: $gray-100;
+    border: 2px solid $gray-200;
+    min-height: 400px;
+    -moz-box-shadow:    inset 0 0 10px $gray-300;
+   -webkit-box-shadow: inset 0 0 10px $gray-300;
+   box-shadow:         inset 0 0 10px $gray-300;
+   margin-top: $spacer;
+}

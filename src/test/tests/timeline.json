@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "timestamp": "2021-09-13 10:20:30",
+            "icon": "fas fa-star",
+            "content": "Feedback einholen"
+        },
+        {
+            "timestamp": "2021-09-12 10:20:30",
+            "icon": "fas fa-phone",
+            "content": "Nachfragen beim Kunden"
+        },
+        {
+            "timestamp": "2021-09-11 10:20:30",
+            "icon": "fas fa-truck",
+            "content": "Lieferung der Ware"
+        },
+        {
+            "timestamp": "2021-09-10 10:20:30",
+            "icon": "fas fa-shopping-cart",
+            "content": "Bestellung des Kunden"
+        }
+    ]
+}
